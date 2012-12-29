@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Static pages" do
 
   let(:base_title) { "Ruby on Rails Tutorial Sample App" }
-  
+
   describe "Home page" do
 
     it "should have the h1 'Sample App'" do
@@ -17,7 +17,7 @@ describe "Static pages" do
                         :text => "#{base_title} | Home")
     end
   end
-
+ 
   describe "Help page" do
 
     it "should have the h1 'Help'" do
