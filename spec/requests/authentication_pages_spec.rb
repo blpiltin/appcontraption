@@ -31,7 +31,7 @@ describe "Authentication" do
         before { click_link "Home" }
         it { should_not have_selector('div.alert.alert-error') }
       end
-      
+
     end
 
     describe "with valid information" do
@@ -52,11 +52,11 @@ describe "Authentication" do
 
       describe "submitting a POST request to the Users#create action" do
         before { post '/users', { name: 'New User', email: 'new@user.com' } }
-        specify { response.should redirect_to(root_path) }        
+        specify { response.should redirect_to(root_path) }
       end
 
     end
-    
+
   end
 
   describe "authorization" do
@@ -103,11 +103,25 @@ describe "Authentication" do
             end
 
             it "should render the default (profile) page" do
-              page.should have_selector('title', text: user.name) 
+              page.should have_selector('title', text: user.name)
             end
           end
 
         end
+      end
+
+      describe "in the Microposts controller" do
+
+        describe "submitting to the create action" do
+          before { post microposts_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          specify { response.should redirect_to(signin_path) }
+        end
+        
       end
 
     end
@@ -136,7 +150,7 @@ describe "Authentication" do
 
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(user) }
-        specify { response.should redirect_to(root_path) }        
+        specify { response.should redirect_to(root_path) }
       end
 
     end
@@ -148,7 +162,7 @@ describe "Authentication" do
 
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(admin) }
-        specify { response.should redirect_to(root_path) }        
+        specify { response.should redirect_to(root_path) }
       end
 
     end
