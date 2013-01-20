@@ -1,3 +1,6 @@
+<div class="micropost-count">
+	<%= @feed_items.count.to_s + ' ' + 'micropost'.pluralize(@feed_items.count) %>
+</div>
 <% if @feed_items.any? %>
   <ol class="microposts">
     <%= render partial: 'shared/feed_item', collection: @feed_items %>

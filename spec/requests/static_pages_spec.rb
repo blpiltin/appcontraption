@@ -19,9 +19,13 @@ describe "Static pages" do
 
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
+      let(:wrong_user) { FactoryGirl.create(:user, email: 'something@something.com') }
+
       before do
         FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum")
         FactoryGirl.create(:micropost, user: user, content: "Dolor sit amet")
+        FactoryGirl.create(:micropost, user: wrong_user, content: "Lorem ipsum")
+        FactoryGirl.create(:micropost, user: wrong_user, content: "Dolor sit amet")
         sign_in user
         visit root_path
       end
@@ -29,6 +33,24 @@ describe "Static pages" do
       it "should render the user's feed" do
         user.feed.each do |item|
           page.should have_selector("li##{item.id}", text: item.content)
+        end
+      end
+
+      it "should count the number of posts" do
+        3.times do
+          visit root_path
+          page.should have_selector("div.micropost-count", 
+            text: user.feed.count.to_s + ' ' + 
+              'micropost'.pluralize(user.feed.count))
+          user.feed.first.delete if user.feed.any?
+        end
+      end
+
+      it "should not have delete links for other users posts" do
+        user.microposts.delete_all
+        visit root_path
+        user.feed.each do |item|
+          item.should_not have_link('delete')
         end
       end
     end
