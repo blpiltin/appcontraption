@@ -1,0 +1,264 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 117.0,
+		"selected_items":
+		[
+			[
+				"beau",
+				"BeautifyRuby"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"prett",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"Package Control:c",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/factories.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/models/user_spec.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/models/micropost_spec.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/models/micropost.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/models/user.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/support/utilities.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/index.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/Gemfile",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/controllers/users_controller.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/requests/authentication_pages_spec.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/layouts/_footer.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/layouts/application.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/db/migrate/20130117044109_create_microposts.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/config/application.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/helpers/sessions_helper.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/helpers/application_helper.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/helpers/users_helper_spec.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/helpers/application_helper_spec.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/config/routes.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/controllers/sessions_controller.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/requests/user_pages_spec.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/edit.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/_fields.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/new.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/_user.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/layouts/_header.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/lib/tasks/sample_data.rake",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/db/migrate/20130116080415_add_admin_to_users.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/_user.html.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/sessions/new.html.erb",
+		"/home/blpiltin/Projects/Code/sample_app/app/views/users/index.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/assets/stylesheets/custom.css.scss",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/requests/static_pages_spec.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/features/signing_in.feature",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/features/step_definitions/authentication_steps.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/assets/javascripts/application.js",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/db/migrate/20130105003651_add_remember_token_to_users.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/controllers/application_controller.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/helpers/users_helper.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/show.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/config/environments/test.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/db/migrate/20130102011828_add_index_to_users_email.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/static_pages/home.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/controllers/static_pages_controller.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/koans/about_nil.rb",
+		"/home/blpiltin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/blpiltin/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/layouts/_shim.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/koans/about_asserts.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/koans/about_nil",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/.git/COMMIT_EDITMSG",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/static_pages/contact.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/static_pages/about.html.erb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/config/database.yml",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/static_pages/help.html.erb",
+		"/var/log/apt/history.log",
+		"/home/blpiltin/.bashrc",
+		"/root/.bashrc",
+		"/var/log/dpkg.log",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/public/hello.html",
+		"/app/controllers/static_pages_controller.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/README.md",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/README.rdoc",
+		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/app/models/micropost.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/app/models/user.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/README",
+		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/Rakefile",
+		"/media/blpiltin/BLPILTIN/Projects/Code/first_app/README.md",
+		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/Gemfile",
+		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/.gitignore",
+		"/home/blpiltin/Projects/Code/first_app/Gemfile",
+		"/home/blpiltin/Projects/Code/first_app/app/controllers/application_controller.rb",
+		"/home/blpiltin/Temp/Test.rb",
+		"/media/blpiltin/BLPILTIN/Projects/Code/first_app/Gemfile",
+		"/media/blpiltin/BLPILTIN/Projects/Code/first_app/.gitignore",
+		"/home/blpiltin/.config/sublime-text-2/Packages/Theme - Default/Widget.sublime-settings",
+		"/home/blpiltin/.config/sublime-text-2/Packages/User/RubyTest.sublime-settings",
+		"/home/blpiltin/.bash_profile",
+		"/usr/share/applications/defaults.list",
+		"/usr/share/applications/sublime.desktop"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"post",
+			"have_selector('title', text: ",
+			"have_selector('h1',    text: ",
+			"have_selector('h1',    text:",
+			"have_selector('title', text:",
+			">",
+			"Ruby on Rails Tutorial Sample App",
+			"\"Ruby on Rails Tutorial Sample App\"",
+			"Ruby on Rails Tutorial Sample App",
+			"gedit.desktop"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"have_title(",
+			"have_heading(",
+			"have_heading",
+			"have_title",
+			"#{base_title}",
+			"sublime.desktop"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 242.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 222.0,
+	"status_bar_visible": true
+}
