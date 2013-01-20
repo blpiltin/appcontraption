@@ -1,18 +1,19 @@
 <% content_for :head do %>
   <script type="text/javascript">
-    function countChars(txtBox) {
+    function charsLeft(txtBox) {
+    	var charCount = 140 - txtBox.value.length
     	$('#char-counter').html(
-    		"The number of characters is " + txtBox.value.length + ".");
+    		"The number of characters left is " + charCount + ".");
     }
   </script>
 <% end %>
 
 <%= form_for(@micropost) do |f| %>
-	<div id="char-counter">The number of characters is 0.</div>
+	<div id="char-counter">The number of characters left is 140.</div>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new micropost...", 
-    	onkeyup: "countChars(this);" %>
+    	onkeyup: "charsLeft(this);" %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
