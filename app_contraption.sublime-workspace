@@ -7,38 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "spec/models/user_spec.rb",
-			"settings":
-			{
-				"buffer_size": 5946,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/user.rb",
-			"settings":
-			{
-				"buffer_size": 1706,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/micropost.rb",
-			"settings":
-			{
-				"buffer_size": 578,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/static_pages_controller.rb",
-			"settings":
-			{
-				"buffer_size": 278,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -116,6 +84,23 @@
 	},
 	"file_history":
 	[
+		"/home/blpiltin/Projects/Code/appcontraption/Gemfile",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/sample_app.sublime-project",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app.sublime-project",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app.sublime-workspace",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/sample_app.sublime-workspace",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/config/initializers/session_store.rb",
+		"/home/blpiltin/Projects/Code/appcontraption/Rakefile",
+		"/home/blpiltin/Projects/Code/appcontraption/config.ru",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/Rakefile",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/config.ru",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/config/application.rb",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/config/environment.rb",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/config/routes.rb",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/config/environments/development.rb",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/config/environments/production.rb",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/config/environments/test.rb",
+		"/home/blpiltin/Projects/Code/appcontraption/sample_app/config/initializers/secret_token.rb",
 		"/home/blpiltin/Projects/Code/sample_app/config/routes.rb",
 		"/home/blpiltin/Projects/Code/sample_app/app/views/users/show.html.erb",
 		"/home/blpiltin/Projects/Code/sample_app/app/views/users/show_follow.html.erb",
@@ -226,24 +211,7 @@
 		"/var/log/dpkg.log",
 		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/public/hello.html",
 		"/app/controllers/static_pages_controller.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/README.md",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/README.rdoc",
-		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/app/models/micropost.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/app/models/user.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/README",
-		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/Rakefile",
-		"/media/blpiltin/BLPILTIN/Projects/Code/first_app/README.md",
-		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/Gemfile",
-		"/media/blpiltin/BLPILTIN/Projects/Code/demo_app/.gitignore",
-		"/home/blpiltin/Projects/Code/first_app/Gemfile",
-		"/home/blpiltin/Projects/Code/first_app/app/controllers/application_controller.rb",
-		"/home/blpiltin/Temp/Test.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/first_app/Gemfile",
-		"/media/blpiltin/BLPILTIN/Projects/Code/first_app/.gitignore",
-		"/home/blpiltin/.config/sublime-text-2/Packages/Theme - Default/Widget.sublime-settings",
-		"/home/blpiltin/.config/sublime-text-2/Packages/User/RubyTest.sublime-settings",
-		"/home/blpiltin/.bash_profile",
-		"/usr/share/applications/defaults.list"
+		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/README.md"
 	],
 	"find":
 	{
@@ -251,9 +219,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -261,6 +230,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"SampleApp",
+			"sample_app",
 			"micropost",
 			"delete",
 			"plural",
@@ -281,6 +252,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"AppContraption",
+			"appcontraption",
 			"object",
 			"have_title(",
 			"have_heading(",
@@ -298,119 +271,8 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "spec/models/user_spec.rb",
-					"settings":
-					{
-						"buffer_size": 5946,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4757,
-								4757
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/RSpec.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3135.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/models/user.rb",
-					"settings":
-					{
-						"buffer_size": 1706,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1323,
-								1323
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 285.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/models/micropost.rb",
-					"settings":
-					{
-						"buffer_size": 578,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								571,
-								571
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/controllers/static_pages_controller.rb",
-					"settings":
-					{
-						"buffer_size": 278,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								214,
-								214
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
