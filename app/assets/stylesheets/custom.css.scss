@@ -65,15 +65,30 @@ p {
 
 /* header */
 
-#logo {
+#logo-left {
+  float: left;
+  font-size: 1.7em;
+  color: white;
+  text-transform: lowercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#logo-right {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: white;
-  text-transform: uppercase;
+  text-transform: lowercase;
   letter-spacing: -1px;
   padding-top: 9px;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1;
   &:hover {
     color: white;
