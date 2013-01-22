@@ -69,5 +69,19 @@ module Appcontraption
     # and use secure cookies.
     # config.force_ssl = true
 
+    config.action_mailer.smtp_settings = {
+      :address              => "mail.stonehen.com",
+      :port                 => 26,
+      :domain               => "stonhen.com",
+      :user_name            => "info+stonehen.com",
+      :password             => "godislove777",
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.default_url_options = {
+      :host => "stonehen.com"
+    }
+
   end
 end
