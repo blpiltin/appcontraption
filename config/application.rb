@@ -73,14 +73,17 @@ module Appcontraption
     config.action_mailer.smtp_settings = {
       :address  => "mail.stonehen.com",
       :port  => 26,
+      :domain               => "stonehen.com",
       :user_name  => "info+stonehen.com",
       :password  => "godislove777",
-      :authentication  => :login
+      # :authentication  => :login
+      :authentication       => :plain,
+      :enable_starttls_auto => true
     }
 
     # ActionMailer delivery method
     config.action_mailer.delivery_method = :smtp
-    
+
     config.action_mailer.default_url_options = {
       :host => "stonehen.com"
     }
