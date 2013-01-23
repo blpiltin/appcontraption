@@ -79,6 +79,7 @@ module Appcontraption
       # :authentication  => :login
       :authentication       => :plain,
       :enable_starttls_auto => true
+      :openssl_verify_mode  => 'none'
     }
 
     # ActionMailer delivery method
