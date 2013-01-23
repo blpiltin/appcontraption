@@ -78,7 +78,7 @@ module Appcontraption
       :password  => "godislove777",
       # :authentication  => :login
       :authentication       => :plain,
-      :enable_starttls_auto => true
+      :enable_starttls_auto => true,
       :openssl_verify_mode  => 'none'
     }
 
