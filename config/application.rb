@@ -71,12 +71,11 @@ module Appcontraption
 
     # ActionMailer related settings
     config.action_mailer.smtp_settings = {
-      :address  => "mail.stonehen.com",
+      :address  => "mail.appcontraption.com",
       :port  => 26,
-      :domain               => "stonehen.com",
-      :user_name  => "info+stonehen.com",
+      :domain               => "appcontraption.com",
+      :user_name  => "info+appcontraption.com",
       :password  => "godislove777",
-      # :authentication  => :login
       :authentication       => :plain,
       :enable_starttls_auto => true,
       :openssl_verify_mode  => 'none'
@@ -86,7 +85,7 @@ module Appcontraption
     config.action_mailer.delivery_method = :smtp
 
     config.action_mailer.default_url_options = {
-      :host => "stonehen.com"
+      :host => "appcontraption.com"
     }
 
     # Force sending in development environment

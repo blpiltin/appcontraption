@@ -5,7 +5,10 @@ class ContactMailer < ActionMailer::Base
 
   def new_message(message)
     @message = message
-    mail(subject:"[appcontraption.com] #{message.subject}", from: message.email)
+    mail(
+    	subject:"[appcontraption.com] #{message.subject}", 
+    	from: message.email,
+    	body: message.body)
   end
 
 end
