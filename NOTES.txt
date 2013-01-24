@@ -1,0 +1,50 @@
+Database Structure
+
+v0.1
+User:
+	name: 						string
+	email: 						string
+	password_digest: 	string
+	admin 						boolean
+
+MenuCategory:
+	name:							string
+	description:			string
+	image:						string
+
+MenuItem:
+	name:							string
+	description:			string
+	price:						double
+	image:						string
+
+v0.2
+User:
+	name: 						string
+	email: 						string
+	password_digest: 	string
+	confirmation:			string
+	user_level:				integer
+	owner_id:					integer
+
+Gadget:
+	name:							string
+	description:			text
+
+UserGadgets:
+	user_id:					integer
+	gadget_id:				integer
+
+USER_LEVELS = ['root', 'superuser', 'admin', 'manager', 'user', 'guest' ]
+
+MenuCategory:
+	name:							string
+	description:			string
+	image:						string
+
+MenuItem:
+	name:							string
+	description:			string
+	price:						double
+	image:						string
+
