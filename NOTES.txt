@@ -5,18 +5,28 @@ User:
 	name: 						string
 	email: 						string
 	password_digest: 	string
-	admin 						boolean
+	admin: 						boolean
+	gadgets:					string	
+			# HomeGadget, MenuGadget, PhotoGadget, MusicGadget, EventGadget, OrderGadget
+
+MenuGadget:
+	name:							string
+	user_id:					integer
 
 MenuCategory:
 	name:							string
 	description:			string
 	image:						string
+	position:					integer
+	menu_gadget_id:		integer
 
 MenuItem:
 	name:							string
 	description:			string
 	price:						double
 	image:						string
+	position:					integer
+	menu_category_id:	integer
 
 v0.2
 User:
@@ -41,10 +51,13 @@ MenuCategory:
 	name:							string
 	description:			string
 	image:						string
+	gadget_id:				integer
 
 MenuItem:
 	name:							string
 	description:			string
 	price:						double
 	image:						string
+	menu_category_id:	integer
+
 
