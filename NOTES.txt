@@ -7,9 +7,18 @@ User:
 	password_digest: 	string
 	admin: 						boolean
 
-Gadget:
-	type:							string
+Lookup:
+	ac_type:					string
 	name:							string
+	code:							integer
+	position:					integer
+
+Gadget:
+	ac_type:					string
+	name:							string
+	description:			text
+	icon:							string
+	position:					integer
 	user_id:					integer
 
 MenuCategory:
@@ -17,7 +26,7 @@ MenuCategory:
 	description:			string
 	image:						string
 	position:					integer
-	menu_gadget_id:		integer
+	gadget_id:				integer
 
 MenuItem:
 	name:							string

@@ -1,4 +1,6 @@
 Appcontraption::Application.routes.draw do
+  resources :lookups
+
   resources :users do
     member do
       get :following, :followers

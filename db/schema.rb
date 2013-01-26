@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122033916) do
+ActiveRecord::Schema.define(:version => 20130126032112) do
+
+  create_table "lookups", :force => true do |t|
+    t.string   "ac_type"
+    t.string   "name"
+    t.integer  "code"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "lookups", ["ac_type", "name", "code"], :name => "index_lookups_on_ac_type_and_name_and_code", :unique => true
+  add_index "lookups", ["ac_type", "name"], :name => "index_lookups_on_ac_type_and_name", :unique => true
 
   create_table "messages", :force => true do |t|
     t.string   "name"
