@@ -40,3 +40,12 @@ def make_relationships
   followed_users.each { |followed| user.follow!(followed) }
   followers.each      { |follower| follower.follow!(user) }
 end
+
+def make_gadget_types
+  GadgetType.create! name: 'Menu'
+  GadgetType.create! name: 'Events'
+  GadgetType.create! name: 'Photos'
+  GadgetType.create! name: 'Music'
+  GadgetType.create! name: 'Contact'
+  GadgetType.create! name: 'Home'
+end

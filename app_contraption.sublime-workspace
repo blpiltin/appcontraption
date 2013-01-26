@@ -7,6 +7,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "NOTES.txt",
+			"settings":
+			{
+				"buffer_size": 1248,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 2344,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/gadget_controller.rb",
+			"settings":
+			{
+				"buffer_size": 498,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/users/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 146,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -84,6 +116,69 @@
 	},
 	"file_history":
 	[
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/sessions_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadget/_gadget.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadget/index.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/factories.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126070606_create_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126070427_create_gadget_types.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/gadget.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/users_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/lookups_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/lib/tasks/sample_data.rake",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/gadget_type.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130102021657_add_password_digest_to_users.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130102011828_add_index_to_users_email.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130101194618_create_users.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126064126_create_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126063425_drop_table_lookups.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126041238_create_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126063841_drop_table_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126064107_create_table_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/schema.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126030407_create_lookups.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/lookup.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/message.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/micropost.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/user.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/development.sqlite3",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/lookups/index.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/helpers/sessions_helper.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_micropost_content.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/users/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_gadget_content.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/lookups/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126031023_drop_table_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126032112_add_index_to_lookups.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126014417_add_gadgets_to_users.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/menu_gadget.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/menu_category.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/layouts/application.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/mailers/contact_mailer.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/config/application.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/layouts/_footer.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_home_guest.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/models/message_spec.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/static_pages/help.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/static_pages/about.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/messages/new.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/static_pages/contact.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130117044109_create_microposts.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/assets/stylesheets/custom.css.scss",
+		"/home/blpiltin/Projects/Code/app_contraption/config/environment.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/messages/index.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/requests/contact_pages_spec.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/config/routes.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/messages_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/log/development.log",
+		"/home/blpiltin/Projects/Code/app_contraption/app/mailers/.gitkeep",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/requests/user_pages_spec.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/views/messages/new.html.erb_spec.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/requests/static_pages_spec.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/requests/messages_pages_spec.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130122033916_create_messages.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/layouts/_header.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/README.md",
 		"/home/blpiltin/Projects/Code/appcontraption/Gemfile",
 		"/home/blpiltin/Projects/Code/appcontraption/sample_app/sample_app.sublime-project",
 		"/home/blpiltin/Projects/Code/appcontraption/sample_app.sublime-project",
@@ -148,70 +243,7 @@
 		"/home/blpiltin/Projects/Code/sample_app/app/static_pages/home.html.erb",
 		"/home/blpiltin/Projects/Code/sample_app/app/controllers/sessions_controller.rb",
 		"/home/blpiltin/Projects/Code/sample_app/app/models/micropost.rb",
-		"/home/blpiltin/Projects/Code/sample_app/app/helpers/sessions_helper.rb",
-		"/home/blpiltin/Projects/Code/sample_app/spec/models/micropost_spec.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/factories.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/models/user_spec.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/models/micropost_spec.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/models/micropost.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/models/user.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/support/utilities.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/index.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/Gemfile",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/controllers/users_controller.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/requests/authentication_pages_spec.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/layouts/_footer.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/layouts/application.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/db/migrate/20130117044109_create_microposts.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/config/application.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/helpers/sessions_helper.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/helpers/application_helper.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/helpers/users_helper_spec.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/helpers/application_helper_spec.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/config/routes.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/controllers/sessions_controller.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/requests/user_pages_spec.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/edit.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/_fields.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/new.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/_user.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/layouts/_header.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/lib/tasks/sample_data.rake",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/db/migrate/20130116080415_add_admin_to_users.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/_user.html.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/sessions/new.html.erb",
-		"/home/blpiltin/Projects/Code/sample_app/app/views/users/index.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/assets/stylesheets/custom.css.scss",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/spec/requests/static_pages_spec.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/features/signing_in.feature",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/features/step_definitions/authentication_steps.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/assets/javascripts/application.js",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/db/migrate/20130105003651_add_remember_token_to_users.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/controllers/application_controller.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/helpers/users_helper.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/users/show.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/config/environments/test.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/db/migrate/20130102011828_add_index_to_users_email.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/static_pages/home.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/controllers/static_pages_controller.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/koans/about_nil.rb",
-		"/home/blpiltin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
-		"/home/blpiltin/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/layouts/_shim.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/koans/about_asserts.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/koans/about_nil",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/.git/COMMIT_EDITMSG",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/static_pages/contact.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/static_pages/about.html.erb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/config/database.yml",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/app/views/static_pages/help.html.erb",
-		"/var/log/apt/history.log",
-		"/home/blpiltin/.bashrc",
-		"/root/.bashrc",
-		"/var/log/dpkg.log",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/public/hello.html",
-		"/app/controllers/static_pages_controller.rb",
-		"/media/blpiltin/BLPILTIN/Projects/Code/sample_app/README.md"
+		"/home/blpiltin/Projects/Code/sample_app/app/helpers/sessions_helper.rb"
 	],
 	"find":
 	{
@@ -230,6 +262,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"gadget",
+			";\n",
+			"mailer",
 			"SampleApp",
 			"sample_app",
 			"micropost",
@@ -271,8 +306,119 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "NOTES.txt",
+					"settings":
+					{
+						"buffer_size": 1248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 2344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								83,
+								83
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/gadget_controller.rb",
+					"settings":
+					{
+						"buffer_size": 498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								206,
+								206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/users/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 146,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -336,6 +482,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 280.0,
+	"side_bar_width": 296.0,
 	"status_bar_visible": true
 }

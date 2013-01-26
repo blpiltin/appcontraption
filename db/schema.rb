@@ -11,19 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126032112) do
+ActiveRecord::Schema.define(:version => 20130126070606) do
 
-  create_table "lookups", :force => true do |t|
-    t.string   "ac_type"
+  create_table "gadget_types", :force => true do |t|
     t.string   "name"
-    t.integer  "code"
-    t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "lookups", ["ac_type", "name", "code"], :name => "index_lookups_on_ac_type_and_name_and_code", :unique => true
-  add_index "lookups", ["ac_type", "name"], :name => "index_lookups_on_ac_type_and_name", :unique => true
+  add_index "gadget_types", ["name"], :name => "index_gadget_types_on_name", :unique => true
+
+  create_table "gadgets", :force => true do |t|
+    t.string   "label"
+    t.string   "icon"
+    t.text     "description"
+    t.integer  "position"
+    t.integer  "user_id"
+    t.integer  "gadget_type_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "gadgets", ["user_id", "gadget_type_id"], :name => "index_gadgets_on_user_id_and_gadget_type_id", :unique => true
 
   create_table "messages", :force => true do |t|
     t.string   "name"

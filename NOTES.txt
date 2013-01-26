@@ -7,19 +7,18 @@ User:
 	password_digest: 	string
 	admin: 						boolean
 
-Lookup:
-	ac_type:					string
+GadgetType:
 	name:							string
-	code:							integer
-	position:					integer
 
 Gadget:
-	ac_type:					string
-	name:							string
-	description:			text
+	label:						string
 	icon:							string
+	description:			text
 	position:					integer
 	user_id:					integer
+	gadget_type_id:		integer
+	indexes:
+		user_id, gadget_type_id:	unique
 
 MenuCategory:
 	name:							string
@@ -27,6 +26,8 @@ MenuCategory:
 	image:						string
 	position:					integer
 	gadget_id:				integer
+	indexes:
+		name, gadget_id:					unique
 
 MenuItem:
 	name:							string
@@ -35,6 +36,8 @@ MenuItem:
 	image:						string
 	position:					integer
 	menu_category_id:	integer
+	indexes:
+		name, menu_category_id:		unique
 
 v0.2
 User:

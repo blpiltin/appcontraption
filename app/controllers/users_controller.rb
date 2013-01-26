@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
 
-  before_filter :signed_in_user, 
-    only: [:index, :edit, :update, :destroy, :following, :followers]
+  before_filter :signed_in_user
   before_filter :correct_user,   only: [:edit, :update]
-  before_filter :admin_user,     only: :destroy
+  before_filter :admin_user, except: [:edit, :update]
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @gadgets = @user.gadgets.paginate(page: params[:page])
   end
 
   def index
@@ -49,37 +48,39 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  def following
-    @title = "Following"
+  def add_gadget
     @user = User.find(params[:id])
-    @users = @user.followed_users.paginate(page: params[:page])
-    render 'show_follow'
+    gadget = @user.gadgets.build(params[:gadget])
+    if gadget.save
+      flash[:success] = "Gadget created!"
+    else
+      flash[:error] = gadget.errors.full_messages
+    end
   end
 
-  def followers
-    @title = "Followers"
+  def remove_gadget
     @user = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
-    render 'show_follow'
+    gadget = @user.gadgets.find_by_id(params[:gadget])
+    gadget.destroy
   end
 
   private
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
+      redirect_to(root_path) unless current_user?(@user) or current_user.admin?
     end
 
     def admin_user
       @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user.admin? and current_user != @user
+      redirect_to(root_path) unless current_user.admin?
     end
 
     def save_user
       @user = User.new(params[:user])
       if @user.save
         sign_in @user
-        flash[:success] = "Welcome to the Sample App!"
+        flash[:success] = "Welcome to the App Contraption!"
         redirect_to @user
       else
         render 'new'
