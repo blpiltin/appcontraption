@@ -72,3 +72,33 @@ MenuItem:
 	menu_category_id:	integer
 
 
+class GadgetController < ApplicationController
+
+  before_filter :signed_in_user
+  before_filter :correct_user,   only: [:index, :show, :edit, :update]
+ 
+  def index
+    @gadgets = current_user.gadgets
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  private
+
+    def correct_user
+      @gadget = Gadget.find(params[:id])
+      redirect_to(root_path) unless current_user?(@gadget.user)
+    end
+
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
+    end
+
+end
