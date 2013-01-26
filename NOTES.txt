@@ -6,10 +6,9 @@ User:
 	email: 						string
 	password_digest: 	string
 	admin: 						boolean
-	gadgets:					string	
-			# HomeGadget, MenuGadget, PhotoGadget, MusicGadget, EventGadget, OrderGadget
 
-MenuGadget:
+Gadget:
+	type:							string
 	name:							string
 	user_id:					integer
 
