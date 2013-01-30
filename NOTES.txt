@@ -102,3 +102,13 @@ class GadgetController < ApplicationController
     end
 
 end
+
+<h3>Menu Categories</h3>
+<% if @menu_categories.any? %>
+  <ul class="menu-categories">
+    <%= render @menu_categories %>
+  </ul>
+<% end %>
+<div class="add-link">
+  <%= link_to "Add Menu Category", :action => "edit" %>
+</div>

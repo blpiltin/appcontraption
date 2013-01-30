@@ -34,4 +34,12 @@ Appcontraption::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Configure the logger
+  # config.logger = Logger.new("Application Log")
+  # config.log_level = :debug
+
+  # Used with the paperclip gem
+  # Paperclip.options[:command_path] = "/usr/bin/"
+
 end

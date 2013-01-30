@@ -1,35 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Label:</b>
-  <%= @gadget.label %>
-</p>
-
-<p>
-  <b>Icon:</b>
-  <%= @gadget.icon %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @gadget.description %>
-</p>
-
-<p>
-  <b>Position:</b>
-  <%= @gadget.position %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @gadget.user_id %>
-</p>
-
-<p>
-  <b>Gadget type:</b>
-  <%= @gadget.gadget_type_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_gadget_path(@gadget) %> |
-<%= link_to 'Back', gadgets_path %>
+<% provide(:title, @gadget.name) %> 
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= image_tag('gadgets/'+@gadget.icon) %>
+        <%= @gadget.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="span8">
+    <%= render view_for_gadget @gadget %>
+  </div>
+</div>
+<span class="edit-link">
+  <%= link_to "Edit Info", edit_gadget_path(@gadget) %>
+</span>
+<span class="back-link"> | <%= link_to "Back", root_path %></span>

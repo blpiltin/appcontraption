@@ -6,15 +6,28 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <% if !current_user.admin? %>
+        <span>
+          <%= pluralize(current_user.gadgets.count, "gadget") %>
+        </span>
+      <% end %>
     </section>
   </aside>
-	<div class="span8">
-    <% if @user.gadgets.any? %>
-      <h3>Gadgets (<%= @user.gadgets.count %>)</h3>
-      <ol class="gadgets">
-        <%= render @gadgets %>
-      </ol>
-      <%= will_paginate @gadgets %>
-    <% end %>
-  </div>
+  <% if current_user.admin? %>
+  	<div class="span8">
+      <% if @gadgets.any? %>
+        <h3>Gadgets</h3>
+        <ul class="gadgets">
+          <%= render @gadgets %>
+        </ul>
+      <% end %>
+      <% if !current_user.admin? %>
+        <div class="add-link">
+          <%= link_to "Add Gadget", :action => "add_gadget" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
+<span><%= link_to "Edit Profile", edit_user_path %></span>
+<span class="back-link"> | <%= link_to "Back", root_path %></span>

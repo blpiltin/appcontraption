@@ -225,7 +225,7 @@ input {
   @extend .error;
  }
  
- /* users index */
+/* users index */
 
 .users {
   list-style: none;
@@ -265,5 +265,20 @@ aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
+  }
+}
+
+/* gadgets index */
+
+.gadgets {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
   }
 }

@@ -6,6 +6,10 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
+# gem "paperclip", "~> 3.0"
+# gem 'carrierwave'
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.12'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

@@ -1,6 +1,3 @@
-<h1>Editing gadget</h1>
-
+<% provide(:title, "Edit Gadget") %> 
+<h1>Edit <%= @gadget.name %> Gadget</h1>
 <%= render 'form' %>
-
-<%= link_to 'Show', @gadget %> |
-<%= link_to 'Back', gadgets_path %>

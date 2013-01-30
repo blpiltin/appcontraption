@@ -94,8 +94,8 @@ describe "Static pages" do
     page.should have_title full_title('Contact')
     click_link "Home"
     page.should have_title full_title('')
-    click_link "Sign up now!"
-    page.should have_title full_title('Sign up')
+    # click_link "Sign up now!"
+    # page.should have_title full_title('Sign up')
     click_link "appcontraption"
     page.should have_title full_title('')
   end

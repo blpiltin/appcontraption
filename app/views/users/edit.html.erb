@@ -1,5 +1,10 @@
-<% provide(:title, "Edit user") %> 
-<h1>Update your profile</h1>
+<% if current_user.admin? %>
+	<% provide(:title, "Edit User") %> 
+	<h1>Edit User</h1>
+<% else %>
+	<% provide(:title, "Update Your Profile") %> 
+	<h1>Update Your Profile</h1>
+<% end %>
 
 <div class="row">
   <div class="span6 offset3">
@@ -7,6 +12,7 @@
     	<%= render 'shared/error_messages', object: f.object %>
       <%= render 'fields', f: f %> 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    	<%= link_to "Cancel", @user %>
     <% end %>
 
     <%= gravatar_for @user %>

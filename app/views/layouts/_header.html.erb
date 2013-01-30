@@ -9,7 +9,22 @@
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
           <% if signed_in? %>
-            <li><%= link_to "Users", users_path %></li>
+            <% if current_user.admin? %>
+              <li><%= link_to "Users", root_path %></li>
+            <% else %>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Gadgets <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <% current_user.gadgets.each do |gadget| %>
+                    <li>
+                      <%= link_to gadget.name, gadget %></li>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            <% end %>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
@@ -19,12 +34,12 @@
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                  <%= link_to "Sign Out", signout_path, method: "delete" %>
                 </li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to "Sign In", signin_path %></li>
           <% end %>
         </ul>
       </nav>

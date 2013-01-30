@@ -6,7 +6,7 @@ describe "User pages" do
 
   describe "index" do
     before do
-      sign_in FactoryGirl.create(:user)
+      sign_in FactoryGirl.create(:user, admin: true)
       FactoryGirl.create(:user, name: "Bob", email: "bob@example.com")
       FactoryGirl.create(:user, name: "Ben", email: "ben@example.com")
       visit users_path
@@ -58,86 +58,65 @@ describe "User pages" do
 
   end
 
-  describe "signup page" do
-    before { visit signup_path }
+  # describe "signup page" do
+  #   before { visit signup_path }
 
-    it { should have_heading('Sign up') }
-    it { should have_title(full_title('Sign up')) }
-  end
+  #   it { should have_heading('Sign up') }
+  #   it { should have_title(full_title('Sign up')) }
+  # end
   
   describe "profile page" do
+    let(:admin) { FactoryGirl.create(:user, admin: true) }
     let(:user) { FactoryGirl.create(:user) }
-    let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
-    let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
+    let!(:g1) { FactoryGirl.create(
+      :gadget, user: user, 
+      gadget_type: GadgetType.find_by_name("Menu") ) }
+    let!(:g2) { FactoryGirl.create(
+      :gadget, user: user, 
+      gadget_type: GadgetType.find_by_name("Events") ) }
 
-    before { visit user_path(user) }
+    before do
+      sign_in admin
+      visit user_path(user) 
+    end
 
     it { should have_heading(user.name) }
     it { should have_title(user.name) }
 
-    describe "microposts" do
-      it { should have_content(m1.content) }
-      it { should have_content(m2.content) }
-      it { should have_content(user.microposts.count) }
-    end
+    describe "gadgets listing" do
 
-    describe "follow/unfollow buttons" do
-      let(:other_user) { FactoryGirl.create(:user) }
-      before { sign_in user }
+      it { should have_selector('h3', text: 'Gadgets') }
+      it { should have_link(g1.name, href: gadget_path(g1)) }
 
-      describe "following a user" do
-        before { visit user_path(other_user) }
-
-        it "should increment the followed user count" do
-          expect do
-            click_button "Follow"
-          end.to change(user.followed_users, :count).by(1)
-        end
-
-        it "should increment the other user's followers count" do
-          expect do
-            click_button "Follow"
-          end.to change(other_user.followers, :count).by(1)
-        end
-
-        describe "toggling the button" do
-          before { click_button "Follow" }
-          it { should have_selector('input', value: 'Unfollow') }
-        end
-      end
-
-      describe "unfollowing a user" do
+      describe "followed users" do
         before do
-          user.follow!(other_user)
-          visit user_path(other_user)
+          sign_in user
+          visit following_user_path(user)
         end
 
-        it "should decrement the followed user count" do
-          expect do
-            click_button "Unfollow"
-          end.to change(user.followed_users, :count).by(-1)
+        it { should have_title(full_title('Following')) }
+        it { should have_selector('h3', text: 'Following') }
+        it { should have_link(other_user.name, href: user_path(other_user)) }
+      end
+
+      describe "followers" do
+        before do
+          sign_in other_user
+          visit followers_user_path(other_user)
         end
 
-        it "should decrement the other user's followers count" do
-          expect do
-            click_button "Unfollow"
-          end.to change(other_user.followers, :count).by(-1)
-        end
-
-        describe "toggling the button" do
-          before { click_button "Unfollow" }
-          it { should have_selector('input', value: 'Follow') }
-        end
+        it { should have_title(full_title('Followers')) }
+        it { should have_selector('h3', text: 'Followers') }
+        it { should have_link(user.name, href: user_path(user)) }
       end
     end
-    
   end
 
-  describe "signup" do
+  describe "new" do
 
-    before { visit signup_path }
+    before { visit new_user_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "Save" }
 
     describe "with invalid information" do
 
@@ -148,7 +127,7 @@ describe "User pages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_title('Sign up') }
+        it { should have_title('New user') }
         it { should have_content('error') }
 
         describe "should show correct error messages" do
@@ -185,13 +164,6 @@ describe "User pages" do
         let(:user) { User.find_by_email('user@example.com') }
 
         it { should have_title(user.name) }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
-        it { should have_link('Sign out') }
-
-        describe "followed by signout" do
-          before { click_link('Sign out') }
-          it { should have_link('Sign in') }
-        end
 
       end
 
@@ -238,34 +210,6 @@ describe "User pages" do
 
     end
 
-  end
-
-  describe "following/followers" do
-    let(:user) { FactoryGirl.create(:user) }
-    let(:other_user) { FactoryGirl.create(:user) }
-    before { user.follow!(other_user) }
-
-    describe "followed users" do
-      before do
-        sign_in user
-        visit following_user_path(user)
-      end
-
-      it { should have_title(full_title('Following')) }
-      it { should have_selector('h3', text: 'Following') }
-      it { should have_link(other_user.name, href: user_path(other_user)) }
-    end
-
-    describe "followers" do
-      before do
-        sign_in other_user
-        visit followers_user_path(other_user)
-      end
-
-      it { should have_title(full_title('Followers')) }
-      it { should have_selector('h3', text: 'Followers') }
-      it { should have_link(user.name, href: user_path(user)) }
-    end
   end
 
 end

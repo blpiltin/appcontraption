@@ -1,8 +1,13 @@
 Appcontraption::Application.routes.draw do
-  resources :gadgets
+ 
+  resources :users do
+    member do
+      get :gadgets, :add_gadget
+    end
+  end
 
-  resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :gadgets
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :messages, only: [:new, :create]

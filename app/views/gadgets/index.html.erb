@@ -1,4 +1,6 @@
-<h1>Listing gadgets</h1>
+<% provide(:title, 'Gadgets') %>
+
+<h1>Gadgets</h1>
 
 <table>
   <tr>
@@ -30,4 +32,6 @@
 
 <br />
 
-<%= link_to 'New Gadget', new_gadget_path %>
+<% if current_user and current_user.admin? %>
+    <%= link_to 'Add Gadget', new_gadget_path %>
+<% end %>

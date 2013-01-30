@@ -1,0 +1,10 @@
+<li class="gadget">
+	<% if !gadget.icon.blank? %>
+		<%= link_to image_tag('gadgets/'+gadget.icon), gadget_path(gadget) %>
+  <% end %>
+  <%= link_to gadget.name, gadget_path(gadget) %>
+  <% if current_user.admin? %>
+    | <%= link_to "Delete", gadget, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
