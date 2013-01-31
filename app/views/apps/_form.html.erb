@@ -20,7 +20,11 @@
 		  </div>
 		  <div class="field">
 		  	<%= f.label :icon %><br />
-		  	<%= image_tag @app.icon.thumb('128x128').url if @app.icon_uid %>
+		  	<% if @app.icon.nil? and !f.object.new_record? %>
+ 					<%= image_tag 'apps/'+@app.type+'.png' %>
+ 				<% else %>
+					<%= image_tag @app.icon.thumb('128x128').url if @app.icon_uid %>
+		  	<% end %>
 		  	<%= f.file_field :icon %>
 				<%= f.hidden_field :retained_icon %>
 		  </div>
@@ -33,7 +37,11 @@
 		    <%= f.text_field :search_words %>
 		  </div>
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-      <%= link_to "Cancel", @app %>
+      <% if f.object.new_record? %>
+      	<%= link_to "Cancel", current_user.admin? ? @app.user : root_path %>
+      <% else %>
+      	<%= link_to "Cancel", @app %>
+      <% end %>
     <% end %>
   </div>
 </div>

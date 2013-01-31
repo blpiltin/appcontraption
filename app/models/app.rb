@@ -1,8 +1,8 @@
 class App < ActiveRecord::Base
 	
   image_accessor :icon
-  attr_accessible :address, :latlong, :name, :search_words,
-    :icon, :retained_icon, :remove_icon, :description
+  attr_accessible :address, :latlong, :name, :search_words, :description,
+    :icon, :retained_icon, :remove_icon
 
   belongs_to :app_type
   belongs_to :user
@@ -18,4 +18,8 @@ class App < ActiveRecord::Base
   validates :user_id, presence: true
   validates :app_type_id, presence: true
 
+  def type
+    app_type.name
+  end
+  
 end

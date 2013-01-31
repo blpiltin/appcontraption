@@ -19,6 +19,10 @@ class Gadget < ActiveRecord::Base
 
   default_scope order: 'gadgets.position'
 
+  def type
+    gadget_type.name
+  end
+  
   def name
     label || (gadget_type && gadget_type.name)
   end

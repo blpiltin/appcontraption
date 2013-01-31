@@ -1,15 +1,15 @@
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@gadget) do |f| %>
+    <%= form_for @gadget, html: {multipart: true} do |f| %>
     	<%= render 'shared/error_messages', object: f.object %>
       <% if f.object.new_record? %>
-    	<div class="field">
-    		<%= f.label :gadget_type %><br />
-		    <%= collection_select(
-		    	:gadget, :gadget_type_id, @gadget_types, 
-		    	:id, :name, prompt:true) %>
-		  </div>
-		  <div><%= f.hidden_field :app_id %></div>
+	    	<div class="field">
+	    		<%= f.label :gadget_type %><br />
+			    <%= collection_select(
+			    	:gadget, :gadget_type_id, @gadget_types, 
+			    	:id, :name, prompt:true) %>
+			  </div>
+			  <div><%= f.hidden_field :app_id %></div>
 		  <% end %>
 		  <div class="field">
 		    <%= f.label :label %><br />
@@ -21,8 +21,8 @@
 		  </div>
 		  <div class="field">
 		  	<%= f.label :icon %><br />
-		  	<% if @gadget.icon.nil? %>
- 					<%= image_tag('gadgets/'+@gadget.gadget_type.name+'.png') %>
+		  	<% if @gadget.icon.nil? and !f.object.new_record? %>
+ 					<%= image_tag 'gadgets/'+@gadget.type+'.png' %>
  				<% else %>
 		  		<%= image_tag @gadget.icon.thumb('128x128').url if @gadget.icon_uid %>
 		  	<% end %>
@@ -30,7 +30,11 @@
 				<%= f.hidden_field :retained_icon %>
 		  </div>
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-      <%= link_to "Cancel", @gadget %>
+      <% if f.object.new_record? %>
+      	<%= link_to "Cancel", @gadget.app %>
+      <% else %>
+      	<%= link_to "Cancel", @gadget %>
+      <% end %>
     <% end %>
   </div>
 </div>
