@@ -4,6 +4,8 @@ namespace :db do
     make_users
     make_microposts
     make_relationships
+    make_app_types
+    make_apps
     make_gadget_types
     make_gadgets
   end
@@ -47,6 +49,44 @@ def make_relationships
   followers.each      { |follower| follower.follow!(user) }
 end
 
+def make_app_types
+  AppType.create! name: 'Restaurant'
+  AppType.create! name: 'Coffeeshop'
+  AppType.create! name: 'Bookstore'
+end
+
+def make_apps
+  users = User.all
+  user  = users.second
+  1.times do |i|
+    app = App.new
+    app.name = Faker::Company.name
+    app.address = Faker::Address.street_address + '\n' +
+      Faker::Address.city +  ', ' + 
+      Faker::Address.state + ' ' + Faker::Address.zip_code
+    app.search_words = Faker::Lorem.words
+    app.description = Faker::Lorem.paragraph
+    app.user = user
+    app.app_type = AppType.find(i+1)
+    app.save
+  end
+
+  user = users.third
+  3.times do |i|
+    app = App.new
+    app.name = Faker::Company.name
+    app.address = Faker::Address.street_address + '\n' +
+      Faker::Address.city +  ', ' + 
+      Faker::Address.state + ' ' + Faker::Address.zip_code
+    app.search_words = Faker::Lorem.words
+    app.description = Faker::Lorem.paragraph
+    app.user = user
+    app.app_type = AppType.find(i+1)
+    app.save
+  end
+end
+
+
 def make_gadget_types
   GadgetType.create! name: 'Menu'
   GadgetType.create! name: 'Events'
@@ -57,21 +97,21 @@ def make_gadget_types
 end
 
 def make_gadgets
-  users = User.all
-  user  = users.second
+  apps = App.all
+  app  = apps.first
   1.times do |i|
     gadget = Gadget.new
     gadget.position = i+1
-    gadget.user = user
+    gadget.app = app
     gadget.gadget_type = GadgetType.find(i+1)
     gadget.save
   end
 
-  user = users.third
+  app = apps.second
   6.times do |i|
     gadget = Gadget.new
     gadget.position = i+1
-    gadget.user = user
+    gadget.app = app
     gadget.gadget_type = GadgetType.find(i+1)
     gadget.save
   end

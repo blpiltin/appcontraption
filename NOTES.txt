@@ -7,6 +7,19 @@ User:
 	password_digest: 	string
 	admin: 						boolean
 
+AppType:
+	name:							string
+
+App:
+	name:							string
+	address:					string
+	latlong:					string
+	search_words:			string
+	app_type_id:			integer
+	user_id:					integer
+	indexes:
+		user_id, name: 						unique
+
 GadgetType:
 	name:							string
 
@@ -15,10 +28,10 @@ Gadget:
 	icon:							string
 	description:			text
 	position:					integer
-	user_id:					integer
+	app_id:						integer
 	gadget_type_id:		integer
 	indexes:
-		user_id, gadget_type_id:	unique
+		app_id, gadget_type_id:	unique
 
 MenuCategory:
 	name:							string
@@ -112,3 +125,6 @@ end
 <div class="add-link">
   <%= link_to "Add Menu Category", :action => "edit" %>
 </div>
+
+twerliwerld
+

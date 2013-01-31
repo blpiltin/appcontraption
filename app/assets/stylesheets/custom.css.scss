@@ -268,9 +268,39 @@ aside {
   }
 }
 
+/* apps index */
+
+.apps {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
 /* gadgets index */
 
 .gadgets {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+/* menu categories index */
+
+.menu-categories {
   list-style: none;
   margin: 0;
   li {

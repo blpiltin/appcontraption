@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @gadgets = @user.gadgets
+    @apps = @user.apps
   end
 
   def index
@@ -39,12 +39,12 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  def add_gadget
+  def add_app
     @user = User.find(params[:id])
-    @gadget = Gadget.new
-    @gadget.user = @user
-    @gadget_types = GadgetType.all
-    render 'gadgets/new'
+    @app = App.new
+    @app.user = @user
+    @app_types = AppType.all
+    render 'apps/new'
   end
 
   private

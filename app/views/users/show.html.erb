@@ -8,24 +8,22 @@
       </h1>
       <% if !current_user.admin? %>
         <span>
-          <%= pluralize(current_user.gadgets.count, "gadget") %>
+          <%= pluralize(current_user.apps.count, "app") %>
         </span>
       <% end %>
     </section>
   </aside>
   <% if current_user.admin? %>
   	<div class="span8">
-      <% if @gadgets.any? %>
-        <h3>Gadgets</h3>
-        <ul class="gadgets">
-          <%= render @gadgets %>
+      <% if @apps.any? %>
+        <h3>Apps</h3>
+        <ul class="apps">
+          <%= render @apps %>
         </ul>
       <% end %>
-      <% if !current_user.admin? %>
-        <div class="add-link">
-          <%= link_to "Add Gadget", :action => "add_gadget" %>
-        </div>
-      <% end %>
+      <div class="add-link">
+        <%= link_to "Add App", :action => "add_app" %>
+      </div>
     </div>
   <% end %>
 </div>

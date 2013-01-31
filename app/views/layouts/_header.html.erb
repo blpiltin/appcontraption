@@ -13,13 +13,12 @@
               <li><%= link_to "Users", root_path %></li>
             <% else %>
               <li id="fat-menu" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Gadgets <b class="caret"></b>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apps <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <% current_user.gadgets.each do |gadget| %>
+                  <% current_user.apps.each do |app| %>
                     <li>
-                      <%= link_to gadget.name, gadget %></li>
+                      <%= link_to app.name, app %></li>
                     </li>
                   <% end %>
                 </ul>

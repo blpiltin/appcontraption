@@ -1,0 +1,30 @@
+<% provide(:title, @app.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= render 'icon', app: @app %>
+        <%= @app.name %>
+      </h1>
+    </section>
+    <span><%= pluralize(@gadgets.count, "gadget") %></span>
+  </aside>
+	<div class="span8">
+    <h3>Gadgets</h3>
+    <% if @gadgets.any? %>
+      <ul class="gadgets">
+        <%= render @gadgets %>
+      </ul>
+    <% end %>
+    <div class="add-link">
+      <%= link_to "Add Gadget", :action => "add_gadget" %>
+    </div>
+  </div>
+</div>
+<span><%= link_to "Edit App Info", edit_app_path %></span>
+<% if current_user.admin? %>
+  <span class="back-link"> | <%= link_to "Back", @app.user %></span>
+<% else %>
+  <span class="back-link"> | <%= link_to "Back", apps_path %></span>
+<% end %>
+

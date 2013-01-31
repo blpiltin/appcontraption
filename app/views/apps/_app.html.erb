@@ -1,0 +1,9 @@
+<li class="app">
+  <%= render 'apps/icon', app: app %>
+  <%= link_to app.name, app_path(app) %>
+  <% if current_user.admin? %>
+    | <%= link_to "Delete", app, method: :delete,
+                                  data: { confirm: "Are you absolutely sure?" } %>
+  <% end %>
+</li>
+

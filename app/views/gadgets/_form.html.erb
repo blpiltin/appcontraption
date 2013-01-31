@@ -8,8 +8,8 @@
 		    <%= collection_select(
 		    	:gadget, :gadget_type_id, @gadget_types, 
 		    	:id, :name, prompt:true) %>
-		    </div>
-		    <div><%= f.hidden_field :user_id %></div>
+		  </div>
+		  <div><%= f.hidden_field :app_id %></div>
 		  <% end %>
 		  <div class="field">
 		    <%= f.label :label %><br />
@@ -20,8 +20,14 @@
 		    <%= f.text_area :description, rows: 10 %>
 		  </div>
 		  <div class="field">
-		    <%= f.label :icon %><br />
-		    <%= f.text_field :icon %>
+		  	<%= f.label :icon %><br />
+		  	<% if @gadget.icon.nil? %>
+ 					<%= image_tag('gadgets/'+@gadget.gadget_type.name+'.png') %>
+ 				<% else %>
+		  		<%= image_tag @gadget.icon.thumb('128x128').url if @gadget.icon_uid %>
+		  	<% end %>
+		  	<%= f.file_field :icon %>
+				<%= f.hidden_field :retained_icon %>
 		  </div>
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
       <%= link_to "Cancel", @gadget %>

@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126070606) do
+ActiveRecord::Schema.define(:version => 20130130064508) do
+
+  create_table "app_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "app_types", ["name"], :name => "index_app_types_on_name", :unique => true
+
+  create_table "apps", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "latlong"
+    t.string   "search_words"
+    t.text     "description"
+    t.string   "icon_uid"
+    t.string   "icon_name"
+    t.integer  "app_type_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "apps", ["name", "user_id"], :name => "index_apps_on_name_and_user_id", :unique => true
 
   create_table "gadget_types", :force => true do |t|
     t.string   "name"
@@ -23,16 +47,17 @@ ActiveRecord::Schema.define(:version => 20130126070606) do
 
   create_table "gadgets", :force => true do |t|
     t.string   "label"
-    t.string   "icon"
     t.text     "description"
+    t.string   "icon_uid"
+    t.string   "icon_name"
     t.integer  "position"
-    t.integer  "user_id"
     t.integer  "gadget_type_id"
+    t.integer  "app_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
 
-  add_index "gadgets", ["user_id", "gadget_type_id"], :name => "index_gadgets_on_user_id_and_gadget_type_id", :unique => true
+  add_index "gadgets", ["app_id", "gadget_type_id"], :name => "index_gadgets_on_app_id_and_gadget_type_id", :unique => true
 
   create_table "messages", :force => true do |t|
     t.string   "name"

@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
       if current_user.admin?
         @users  = User.paginate(page: params[:page])
       else
-        @gadgets = current_user.gadgets
+        @apps = current_user.apps.paginate(page: params[:page])
       end
     end
   end

@@ -1,12 +1,13 @@
 class GadgetsController < ApplicationController
 
   before_filter :signed_in_user
-  before_filter :admin_user, only: [:new, :create, :destroy]
-  before_filter :correct_user, only: [:show, :edit, :update]
+  before_filter :admin_or_owner_user, 
+    except: [:index, :new, :create]
+  before_filter :admin_user, only: :delete
 
   # GET /gadgets
   # GET /gadgets.json
-  def gadgets
+  def index
     @user = current_user
     @gadgets = @user.gadgets
 
@@ -31,11 +32,7 @@ class GadgetsController < ApplicationController
   # GET /gadgets/new.json
   def new
     @gadget = Gadget.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @gadget }
-    end
+    @gadget_types = GadgetType.all
   end
 
   # GET /gadgets/1/edit
@@ -47,18 +44,15 @@ class GadgetsController < ApplicationController
   # POST /gadgets.json
   def create
     @gadget = Gadget.new
-    @gadget.user_id = params[:gadget][:user_id]
+    @gadget.app_id = params[:gadget][:app_id]
     @gadget.gadget_type_id = params[:gadget][:gadget_type_id]
-    @gadget.position = Gadget.find_all_by_user_id(params[:gadget][:user_id]).count
+    @gadget.position = 
+      Gadget.find_all_by_app_id(params[:gadget][:app_id]).count + 1
     @gadget_types = GadgetType.all
-    respond_to do |format|
-      if @gadget.save
-        format.html { redirect_to @gadget.user, notice: 'Gadget was successfully created.' }
-        format.json { render json: @gadget, status: :created, location: @gadget }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @gadget.errors, status: :unprocessable_entity }
-      end
+    if @gadget.save
+      redirect_to @gadget.app, notice: 'Gadget was successfully created.'
+    else
+      render action: "new" 
     end
   end
 
@@ -67,19 +61,12 @@ class GadgetsController < ApplicationController
   def update
     @gadget = Gadget.find(params[:id])
 
-    respond_to do |format|
-      if @gadget.update_attributes(params[:gadget])
-        if current_user.admin?
-          format.html { redirect_to @gadget.user, notice: 'Gadget was successfully updated.' }
-        else
-          format.html { redirect_to @gadget, notice: 'Gadget was successfully updated.' }
-        end
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @gadget.errors, status: :unprocessable_entity }
-      end
+    if @gadget.update_attributes(params[:gadget])
+      redirect_to gadget_path(@gadget), notice: 'Gadget was successfully updated.'
+    else
+      render action: "edit"
     end
+
   end
 
   # DELETE /gadgets/1
@@ -87,21 +74,20 @@ class GadgetsController < ApplicationController
   def destroy
     @gadget = Gadget.find(params[:id])
     @gadget.destroy
-
-    respond_to do |format|
-      format.html { redirect_to @gadget.user, notice: 'Gadget was successfully deleted.' }
-      format.json { head :no_content }
-    end
+    redirect_to @gadget.app, notice: 'Gadget was successfully deleted.'
   end
 
   private
 
-    def correct_user
-      @gadget = current_user.gadgets.find_by_id(params[:id])
-      redirect_to root_url if @gadget.nil? and !current_user.admin?
+    def admin_or_owner_user
+      if !current_user.admin?
+        @gadget = Gadget.find_by_id(params[:id])
+        @user = @gadget.app.user
+        redirect_to root_path if @user != current_user
+      end
     end
 
     def admin_user
-      redirect_to(root_path) unless current_user.admin?
+      redirect_to root_path unless current_user.admin?
     end
 end

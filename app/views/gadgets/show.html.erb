@@ -3,7 +3,7 @@
   <aside class="span4">
     <section>
       <h1>
-        <%= image_tag('gadgets/'+@gadget.icon) %>
+        <%= render 'icon', gadget: @gadget %>
         <%= @gadget.name %>
       </h1>
     </section>
@@ -12,7 +12,5 @@
     <%= render view_for_gadget @gadget %>
   </div>
 </div>
-<span class="edit-link">
-  <%= link_to "Edit Info", edit_gadget_path(@gadget) %>
-</span>
-<span class="back-link"> | <%= link_to "Back", root_path %></span>
+<span><%= link_to "Edit Gadget Info", edit_gadget_path %></span>
+<span class="back-link"> | <%= link_to "Back", @gadget.app %></span>

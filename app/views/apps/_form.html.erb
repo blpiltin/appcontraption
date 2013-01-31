@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="span6 offset3">
+  	<%= form_for @app, html: {multipart: true} do |f| %>
+    	<%= render 'shared/error_messages', object: f.object %>
+      <% if f.object.new_record? %>
+    		<div class="field">
+    			<%= f.label :app_type %><br />
+		    	<%= collection_select(
+		    		:app, :app_type_id, @app_types, :id, :name, prompt:true) %>
+		    </div>
+		    <div><%= f.hidden_field :user_id %></div>
+		  <% end %>
+		  <div class="field">
+		    <%= f.label :name %><br />
+		    <%= f.text_field :name %>
+		  </div>
+			<div class="field">
+		    <%= f.label :address %><br />
+		    <%= f.text_area :address, rows: 4 %>
+		  </div>
+		  <div class="field">
+		  	<%= f.label :icon %><br />
+		  	<%= image_tag @app.icon.thumb('128x128').url if @app.icon_uid %>
+		  	<%= f.file_field :icon %>
+				<%= f.hidden_field :retained_icon %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :description %><br />
+		    <%= f.text_area :description, rows: 10 %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :search_words, 'Search Words (seperate with spaces)' %> <br />
+		    <%= f.text_field :search_words %>
+		  </div>
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <%= link_to "Cancel", @app %>
+    <% end %>
+  </div>
+</div>
