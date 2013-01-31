@@ -1,6 +1,6 @@
 class GadgetsController < ApplicationController
 
-  before_filter :signed_in_user
+  before_filter :signed_in_user, except: [:index, :show]
   before_filter :admin_or_owner_user, 
     except: [:index, :new, :create]
   before_filter :admin_user, only: :delete
@@ -21,7 +21,16 @@ class GadgetsController < ApplicationController
   # GET /gadgets/1.json
   def show
     @gadget = Gadget.find(params[:id])
-    @menu_categories = []
+    case @gadget.type.downcase
+    when 'menu' 
+      @menu_categories = @gadget.menu_categories
+    when 'events'
+    when 'photos'
+    when 'contact'
+    when 'homepage'
+    when 'music'
+    else 
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @gadget }
@@ -75,6 +84,13 @@ class GadgetsController < ApplicationController
     @gadget = Gadget.find(params[:id])
     @gadget.destroy
     redirect_to @gadget.app, notice: 'Gadget was successfully deleted.'
+  end
+
+  def add_menu_category
+    @gadget = Gadget.find(params[:id])
+    @menu_category = MenuCategory.new
+    @menu_category.gadget = @gadget
+    render 'menu_categories/new'
   end
 
   private

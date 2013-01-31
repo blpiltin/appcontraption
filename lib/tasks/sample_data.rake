@@ -8,6 +8,7 @@ namespace :db do
     make_apps
     make_gadget_types
     make_gadgets
+    make_menu_categories
   end
 end
 
@@ -115,4 +116,30 @@ def make_gadgets
     gadget.gadget_type = GadgetType.find(i+1)
     gadget.save
   end
+end
+
+def make_menu_categories
+
+  gadgets = Gadget.find_all_by_type "Menu"
+  gadget = gadgets.first
+
+  1.times do |i|
+    menu_category = MenuCategory.new
+    menu_category.name = Faker::Lorem.words[0]
+    menu_category.description = Faker::Lorem.paragraph
+    menu_category.position = i+1
+    menu_category.gadget = gadget
+    menu_category.save
+  end
+
+  gadget = gadgets.second
+  3.times do |i|
+    menu_category = MenuCategory.new
+    menu_category.name = Faker::Lorem.words[0]
+    menu_category.description = Faker::Lorem.paragraph
+    menu_category.position = i+1
+    menu_category.gadget = gadget
+    menu_category.save
+  end
+
 end

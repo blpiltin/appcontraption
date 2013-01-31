@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @menu_category, html: {multipart: true} do |f| %>
+    	<%= render 'shared/error_messages', object: f.object %>
+      <% if f.object.new_record? %>
+			  <div><%= f.hidden_field :gadget_id %></div>
+		  <% end %>
+		  <div class="field">
+		    <%= f.label :name %><br />
+		    <%= f.text_field :name %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :description %><br />
+		    <%= f.text_area :description, rows: 10 %>
+		  </div>
+		  <div class="field">
+		  	<%= f.label :icon, 'Icon (128x128 pixel .png recommended)' %><br />
+				<%= image_tag @menu_category.icon.thumb('128x128').url if @menu_category.icon_uid %>
+		  	<%= f.file_field :icon %>
+				<%= f.hidden_field :retained_icon %>
+		  </div>
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <% if f.object.new_record? %>
+      	<%= link_to "Cancel", @menu_category.gadget %>
+      <% else %>
+      	<%= link_to "Cancel", @menu_category %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -7,9 +7,10 @@
         <%= @gadget.name %>
       </h1>
     </section>
+    <span><%= pluralize(@menu_categories.count, "menu category") %></span>
   </aside>
   <div class="span8">
-    <%= render view_for_gadget @gadget %>
+    <%= render @gadget.type.downcase %>
   </div>
 </div>
 <span><%= link_to "Edit Gadget Info", edit_gadget_path %></span>

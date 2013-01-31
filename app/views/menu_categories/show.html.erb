@@ -1,0 +1,17 @@
+<% provide(:title, @menu_category.name) %> 
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= render 'icon', menu_category: @menu_category %>
+        <%= @menu_category.name %>
+      </h1>
+    </section>
+    <span><%= pluralize(@menu_items.count, "menu item") %></span>
+  </aside>
+  <div class="span8">
+    <%= render @menu_category %>
+  </div>
+</div>
+<span><%= link_to "Edit Menu Category Info", edit_menu_category_path %></span>
+<span class="back-link"> | <%= link_to "Back", @menu_category.gadget %></span>

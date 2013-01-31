@@ -1,6 +1,6 @@
 class AppsController < ApplicationController
 
-  before_filter :signed_in_user
+  before_filter :signed_in_user, except: [:index, :show]
   before_filter :admin_or_owner_user, 
     except: [:index, :new, :create, :add_gadget]
   before_filter :admin_user, only: :delete

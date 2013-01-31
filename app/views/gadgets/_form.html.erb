@@ -20,7 +20,7 @@
 		    <%= f.text_area :description, rows: 10 %>
 		  </div>
 		  <div class="field">
-		  	<%= f.label :icon %><br />
+		  	<%= f.label :icon, 'Icon (128x128 pixel .png recommended)' %><br />
 		  	<% if @gadget.icon.nil? and !f.object.new_record? %>
  					<%= image_tag 'gadgets/'+@gadget.type+'.png' %>
  				<% else %>

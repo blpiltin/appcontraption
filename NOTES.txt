@@ -1,3 +1,26 @@
+API
+  app.com/12309812309812029/apps
+  [
+  	{
+	  	id: 1,
+	  	name: 'Whatever',
+	  	description: 'Whlkdj dflkj lkjd f',
+	  	gadgets: [
+	  		{
+	  			id: 1,
+	  			name: 'Menu',
+	  			...
+	  		},
+	  		...
+	  	]
+	  },
+	  ...
+  ]
+  app.com/12309812309812029/apps/1
+  app.com/12309812309812029/gadgets/1
+  app.com/12309812309812029/menu_categories/1
+  app.com/12309812309812029/menu_items/1
+
 Database Structure
 
 v0.1
@@ -35,8 +58,8 @@ Gadget:
 
 MenuCategory:
 	name:							string
-	description:			string
-	image:						string
+	description:			text
+	icon:							string
 	position:					integer
 	gadget_id:				integer
 	indexes:

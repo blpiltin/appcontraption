@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130064508) do
+ActiveRecord::Schema.define(:version => 20130131073029) do
 
   create_table "app_types", :force => true do |t|
     t.string   "name"
@@ -58,6 +58,19 @@ ActiveRecord::Schema.define(:version => 20130130064508) do
   end
 
   add_index "gadgets", ["app_id", "gadget_type_id"], :name => "index_gadgets_on_app_id_and_gadget_type_id", :unique => true
+
+  create_table "menu_categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "icon_uid"
+    t.string   "icon_name"
+    t.integer  "position"
+    t.integer  "gadget_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "menu_categories", ["name", "gadget_id"], :name => "index_menu_categories_on_name_and_gadget_id", :unique => true
 
   create_table "messages", :force => true do |t|
     t.string   "name"
