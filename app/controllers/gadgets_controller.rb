@@ -1,8 +1,8 @@
 class GadgetsController < ApplicationController
 
-  before_filter :signed_in_user, except: [:index, :show]
+  before_filter :signed_in_user, except: [:index]
   before_filter :admin_or_owner_user, 
-    except: [:index, :new, :create]
+    except: [:index, :show, :new, :create]
   before_filter :admin_user, only: :delete
 
   # GET /gadgets

@@ -5,6 +5,11 @@
       <h1>
         Menu Category : <%= @menu_category.name %><br />
       </h1>
+      <% if !@menu_category.description.blank? %>
+        <div class="menu-category-description">
+          <%= @menu_category.description %>
+        </div>
+      <% end %>
       <%= render 'icon', menu_category: @menu_category %>
     </section>
     <div class="count"><%= pluralize(@menu_items.count, "menu item") %></div>

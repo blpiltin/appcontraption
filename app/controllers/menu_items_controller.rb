@@ -2,7 +2,6 @@ class MenuItemsController < ApplicationController
 
   before_filter :signed_in_user, except: [:index, :show]
   before_filter :admin_or_owner_user, except: [:index, :new, :create]
-  before_filter :admin_user, only: :delete
 
   def show
     @menu_item = MenuItem.find(params[:id])
@@ -36,7 +35,7 @@ class MenuItemsController < ApplicationController
   def update
     @menu_item = MenuItem.find(params[:id])
     if @menu_item.update_attributes(params[:menu_item])
-      redirect_to menu_item_path(@menu_item), notice: 'Menu item was successfully updated.'
+      redirect_to @menu_item.menu_category, notice: 'Menu item was successfully updated.'
     else
       render action: "edit"
     end
@@ -45,7 +44,7 @@ class MenuItemsController < ApplicationController
   def destroy
     @menu_item = MenuItem.find(params[:id])
     @menu_item.destroy
-    redirect_to @menu_item.gadget, notice: 'Menu item was successfully deleted.'
+    redirect_to @menu_item.menu_category, notice: 'Menu item was successfully deleted.'
   end
 
   private
