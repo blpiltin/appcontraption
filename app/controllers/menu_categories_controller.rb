@@ -6,7 +6,7 @@ class MenuCategoriesController < ApplicationController
 
   def show
     @menu_category = MenuCategory.find(params[:id])
-    @menu_items = []
+    @menu_items = @menu_category.menu_items
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @menu_category }
@@ -47,6 +47,13 @@ class MenuCategoriesController < ApplicationController
     @menu_category = MenuCategory.find(params[:id])
     @menu_category.destroy
     redirect_to @menu_category.gadget, notice: 'Menu category was successfully deleted.'
+  end
+
+  def add_menu_item
+    @menu_category = MenuCategory.find(params[:id])
+    @menu_item = MenuItem.new
+    @menu_item.menu_category = @menu_category
+    render 'menu_items/new'
   end
 
   private

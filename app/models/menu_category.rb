@@ -4,6 +4,7 @@ class MenuCategory < ActiveRecord::Base
   	:icon, :retained_icon, :remove_icon
 
   belongs_to :gadget
+  has_many :menu_items, dependent: :destroy
 
   validates_uniqueness_of :name, scope: :gadget_id, \
     message: "must be unique for each menu category in menu."

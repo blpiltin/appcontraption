@@ -1,0 +1,14 @@
+<li class="menu-item">
+	<span>
+	<div style="float:left">
+		<%= render 'menu_items/image', menu_item: menu_item %>
+	</div>
+  <div>
+  	<%= link_to menu_item.name, edit_menu_item_path(menu_item) %>
+  	| <%= link_to "Delete", menu_item, method: :delete,
+                                  data: { confirm: "Are you sure?" } %><br />
+  	<%= menu_item.description %><br />
+  	<%= '$'+menu_item.price.to_s %><br />
+  </div>
+  </span>
+</li>

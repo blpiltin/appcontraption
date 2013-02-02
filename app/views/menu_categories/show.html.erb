@@ -1,17 +1,25 @@
-<% provide(:title, @menu_category.name) %> 
+<% provide(:title, 'Menu Category : '+@menu_category.name) %> 
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
-        <%= render 'icon', menu_category: @menu_category %>
-        <%= @menu_category.name %>
+        Menu Category : <%= @menu_category.name %><br />
       </h1>
+      <%= render 'icon', menu_category: @menu_category %>
     </section>
-    <span><%= pluralize(@menu_items.count, "menu item") %></span>
+    <div class="count"><%= pluralize(@menu_items.count, "menu item") %></div>
+    <span><%= link_to "Edit Menu Category Info", edit_menu_category_path %></span>
+<span class="back-link"> | <%= link_to "Back", @menu_category.gadget %></span>
   </aside>
   <div class="span8">
-    <%= render @menu_category %>
+    <h3>Menu Items</h3>
+    <% if @menu_items.any? %>
+      <ul class="menu-items">
+        <%= render @menu_items %>
+      </ul>
+    <% end %>
+    <div class="add-link">
+      <%= link_to "Add Menu Item", :action => "add_menu_item" %>
+    </div>
   </div>
 </div>
-<span><%= link_to "Edit Menu Category Info", edit_menu_category_path %></span>
-<span class="back-link"> | <%= link_to "Back", @menu_category.gadget %></span>

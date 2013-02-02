@@ -35,6 +35,11 @@ textarea {
   }
 }
 
+.icon img {
+  padding: 0px 10px 10px 0px;
+  width: 145px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -261,10 +266,20 @@ input {
   float: left;
   margin-right: 10px;
 }
+
 aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
+  }
+
+  h1 {
+    border-bottom: 1px solid $grayLighter;
+    padding: 0px 0px 5px 0px;
+  }
+  .count {
+    border-bottom: 1px solid $grayLighter;
+    padding: 0px 0px 5px 0px;
   }
 }
 
@@ -311,4 +326,23 @@ aside {
       border-bottom: 1px solid $grayLighter;
     }
   }
+}
+
+/* menu items */
+
+.menu-items {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+.menu-item img {
+  margin-right: 10px;
 }

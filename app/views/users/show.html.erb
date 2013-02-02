@@ -1,17 +1,19 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, "User : "+@user.name) %>
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+        User : <%= @user.name %><br />
       </h1>
-      <% if !current_user.admin? %>
-        <span>
+      <%= gravatar_for @user %>
+      </section>
+      <% if !@user.admin? %>
+        <div class="count">
           <%= pluralize(current_user.apps.count, "app") %>
-        </span>
+        </div>
+        <span><%= link_to "Edit Profile", edit_user_path %></span>
+        <span class="back-link"> | <%= link_to "Back", root_path %></span>
       <% end %>
-    </section>
   </aside>
   <% if current_user.admin? %>
   	<div class="span8">
@@ -27,5 +29,3 @@
     </div>
   <% end %>
 </div>
-<span><%= link_to "Edit Profile", edit_user_path %></span>
-<span class="back-link"> | <%= link_to "Back", root_path %></span>

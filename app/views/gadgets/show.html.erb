@@ -1,17 +1,17 @@
-<% provide(:title, @gadget.name) %> 
+<% provide(:title, @gadget.type+" Gadget : "+@gadget.name) %> 
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
-        <%= render 'icon', gadget: @gadget %>
-        <%= @gadget.name %>
+        <%= @gadget.type %> Gadget : <%= @gadget.name %><br />
       </h1>
+      <%= render 'icon', gadget: @gadget %>
     </section>
-    <span><%= pluralize(@menu_categories.count, "menu category") %></span>
+    <div class="count"><%= pluralize(@menu_categories.count, "menu category") %></div>
+    <span><%= link_to "Edit Gadget Info", edit_gadget_path %></span>
+    <span class="back-link"> | <%= link_to "Back", @gadget.app %></span>
   </aside>
   <div class="span8">
     <%= render @gadget.type.downcase %>
   </div>
 </div>
-<span><%= link_to "Edit Gadget Info", edit_gadget_path %></span>
-<span class="back-link"> | <%= link_to "Back", @gadget.app %></span>

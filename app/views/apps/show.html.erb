@@ -1,13 +1,19 @@
-<% provide(:title, @app.name) %>
+<% provide(:title, "App : "+@app.name) %>
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
-        <%= render 'icon', app: @app %>
-        <%= @app.name %>
+        App : <%= @app.name %><br />
       </h1>
+      <%= render 'icon', app: @app %>
     </section>
-    <span><%= pluralize(@gadgets.count, "gadget") %></span>
+    <div class="count"><%= pluralize(@gadgets.count, "gadget") %></div>
+    <span><%= link_to "Edit App Info", edit_app_path %></span>
+    <% if current_user.admin? %>
+      <span class="back-link"> | <%= link_to "Back", @app.user %></span>
+    <% else %>
+      <span class="back-link"> | <%= link_to "Back", apps_path %></span>
+    <% end %>
   </aside>
 	<div class="span8">
     <h3>Gadgets</h3>
@@ -21,10 +27,3 @@
     </div>
   </div>
 </div>
-<span><%= link_to "Edit App Info", edit_app_path %></span>
-<% if current_user.admin? %>
-  <span class="back-link"> | <%= link_to "Back", @app.user %></span>
-<% else %>
-  <span class="back-link"> | <%= link_to "Back", apps_path %></span>
-<% end %>
-

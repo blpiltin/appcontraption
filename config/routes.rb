@@ -17,9 +17,10 @@ Appcontraption::Application.routes.draw do
   end
   resources :menu_categories do
     member do
-      get :menu_items
+      get :menu_items, :add_menu_item
     end
   end
+  resources :menu_items
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :messages, only: [:new, :create]

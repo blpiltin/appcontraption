@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @menu_item, html: {multipart: true} do |f| %>
+    	<%= render 'shared/error_messages', object: f.object %>
+      <% if f.object.new_record? %>
+			  <%= f.hidden_field :menu_category_id %>
+		  <% end %>
+
+	    <%= f.label :name %>
+	    <%= f.text_field :name %>
+
+	    <%= f.label :description %>
+	    <%= f.text_area :description, rows: 10 %>
+
+	    <%= f.label :price, 'Price (do not include $)'%>
+	    <%= f.text_field :price %>
+
+		  <div class="icon">
+		  	<%= f.label :image %>
+				<%= image_tag @menu_item.image.thumb('145x').url if @menu_item.image_uid %>
+		  	<%= f.file_field :image %>
+				<%= f.hidden_field :retained_image %>
+		  </div>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+			<%= link_to "Cancel", @menu_item.menu_category %>
+			
+    <% end %>
+  </div>
+</div>

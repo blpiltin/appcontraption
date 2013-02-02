@@ -1,3 +1,19 @@
+def rand_int(from, to)
+  rand_in_range(from, to).to_i
+end
+
+def rand_price(from, to)
+  rand_in_range(from, to).round(2)
+end
+
+def rand_time(from, to=Time.now)
+  Time.at(rand_in_range(from.to_f, to.to_f))
+end
+
+def rand_in_range(from, to)
+  rand * (to - from) + from
+end
+
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
@@ -9,6 +25,7 @@ namespace :db do
     make_gadget_types
     make_gadgets
     make_menu_categories
+    make_menu_items
   end
 end
 
@@ -133,13 +150,40 @@ def make_menu_categories
   end
 
   gadget = gadgets.second
-  3.times do |i|
+  20.times do |i|
     menu_category = MenuCategory.new
     menu_category.name = Faker::Lorem.words[0]
     menu_category.description = Faker::Lorem.paragraph
     menu_category.position = i+1
     menu_category.gadget = gadget
     menu_category.save
+  end
+end
+
+def make_menu_items
+
+  menu_categories = MenuCategory.all
+  menu_category = menu_categories.first
+
+  1.times do |i|
+    menu_item = MenuItem.new
+    menu_item.name = Faker::Lorem.words
+    menu_item.description = Faker::Lorem.paragraph
+    menu_item.price = rand_price 0.01, 999.99
+    menu_item.position = i+1
+    menu_item.menu_category = menu_category
+    menu_item.save
+  end
+
+  menu_category = menu_categories.second
+  20.times do |i|
+    menu_item = MenuItem.new
+    menu_item.name = Faker::Lorem.words
+    menu_item.description = Faker::Lorem.paragraph
+    menu_item.price = rand_price 0.01, 999.99
+    menu_item.position = i+1
+    menu_item.menu_category = menu_category
+    menu_item.save
   end
 
 end
