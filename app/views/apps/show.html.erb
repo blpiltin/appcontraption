@@ -7,7 +7,11 @@
       </h1>
       <%= render 'icon', app: @app %>
     </section>
-    <div class="count"><%= pluralize(@gadgets.count, "gadget") %></div>
+    <div class="count">
+      <%= pluralize(@gadgets.count, "gadget") %><br />
+      <strong>App ID:</strong> <%= @app.id.to_s %><br />
+      <strong>Access Token:</strong> <%= @app.access_token %>
+    </div>
     <span><%= link_to "Edit App Info", edit_app_path %></span>
     <% if current_user.admin? %>
       <span class="back-link"> | <%= link_to "Back", @app.user %></span>

@@ -1,4 +1,5 @@
 class Gadget < ActiveRecord::Base
+
   image_accessor :icon
   attr_accessible :description, :label,
     :icon, :retained_icon, :remove_icon
@@ -17,6 +18,14 @@ class Gadget < ActiveRecord::Base
   default_scope order: 'gadgets.position'
 
   before_save :default_values
+
+  def as_json(options={})
+    super(options.merge(methods: [:icon_url]))
+  end
+
+  def icon_url
+    icon.remote_url unless icon.blank?
+  end
 
   def self.find_all_by_type(type_name)
     Gadget.where(gadget_type_id:GadgetType.find_by_name(type_name).id)

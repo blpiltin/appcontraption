@@ -1,7 +1,12 @@
 class MenuItem < ActiveRecord::Base
-	image_accessor :image
+  image_accessor :image do
+    copy_to(:thumbnail) {|a| a.thumb('128x128#') }
+  end
+  image_accessor :thumbnail
+
   attr_accessible :name, :description, :price,
-  	:image, :retained_image, :remove_image
+    :image, :retained_image, :remove_image,
+  	:thumbnail, :retained_thumbnail, :remove_thumbnail
 
   belongs_to :menu_category
 
@@ -17,6 +22,18 @@ class MenuItem < ActiveRecord::Base
   default_scope order: 'menu_items.position'
 
  	before_save :default_values
+  
+  def as_json(options={})
+    super(options.merge(methods: [:image_url, :thumbnail_url]))
+  end
+
+  def image_url
+    image.remote_url unless image.blank?
+  end
+
+  def thumbnail_url
+    thumbnail.remote_url unless thumbnail.blank?
+  end
 
 	private
     def default_values

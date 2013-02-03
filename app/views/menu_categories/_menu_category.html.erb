@@ -1,5 +1,5 @@
 <li class="menu-category">
-	<%= render 'menu_categories/icon', menu_category: menu_category %>
+	<%= render 'menu_categories/image', menu_category: menu_category %>
   <%= link_to menu_category.name, menu_category_path(menu_category) %>
   | <%= link_to "Delete", menu_category, method: :delete,
                                   data: { confirm: "Are you sure?" } %>

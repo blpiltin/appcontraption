@@ -35,6 +35,9 @@ Appcontraption::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  # Allow urls to the public directory
+  config.serve_static_assets = true
+
   # Configure the logger
   # config.logger = Logger.new("Application Log")
   # config.log_level = :debug

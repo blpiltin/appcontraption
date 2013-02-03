@@ -21,10 +21,11 @@ Appcontraption::Application.routes.draw do
     end
   end
   resources :menu_items
-  resources :microposts, only: [:create, :destroy]
-  resources :relationships, only: [:create, :destroy]
   resources :messages, only: [:new, :create]
-  
+
+  match '/:access_token/:app_id/:controller', to: ':controller#index_json', via: :get
+  match '/:access_token/:app_id/:controller/:id', to: ':controller#show_json', via: :get
+
   root to: 'static_pages#home'
   
   match '/signup',  to: 'users#new'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131165623) do
+ActiveRecord::Schema.define(:version => 20130203024835) do
 
   create_table "app_types", :force => true do |t|
     t.string   "name"
@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(:version => 20130131165623) do
     t.string   "search_words"
     t.text     "description"
     t.string   "icon_uid"
-    t.string   "icon_name"
+    t.string   "splash_uid"
     t.integer  "app_type_id"
     t.integer  "user_id"
+    t.string   "access_token"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -49,7 +50,6 @@ ActiveRecord::Schema.define(:version => 20130131165623) do
     t.string   "label"
     t.text     "description"
     t.string   "icon_uid"
-    t.string   "icon_name"
     t.integer  "position"
     t.integer  "gadget_type_id"
     t.integer  "app_id"
@@ -62,12 +62,12 @@ ActiveRecord::Schema.define(:version => 20130131165623) do
   create_table "menu_categories", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "icon_uid"
-    t.string   "icon_name"
+    t.string   "image_uid"
+    t.string   "thumbnail_uid"
     t.integer  "position"
     t.integer  "gadget_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "menu_categories", ["name", "gadget_id"], :name => "index_menu_categories_on_name_and_gadget_id", :unique => true
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20130131165623) do
     t.string   "name"
     t.text     "description"
     t.string   "image_uid"
-    t.string   "image_name"
+    t.string   "thumbnail_uid"
     t.decimal  "price"
     t.integer  "position"
     t.integer  "menu_category_id"

@@ -1,4 +1,25 @@
 API
+
+	:domain/:access_token/:app_id/:controller/:id/:action
+	curl http://localhost:3000/HYDSw4-CoDyngzYN-Po5QA/1/menu_categories
+	[
+   {
+      "created_at":"2013-02-03T02:55:52Z",
+      "description":"Commodi dolores magni sunt. Dolorem et rerum deserunt ducimus. Maiores corrupti ipsum fugit voluptatem qui est et. Laborum officiis aut nam.",
+      "gadget_id":1,
+      "id":1,
+      "image_uid":"2013/02/02/21_05_01_760_hen.jpg",
+      "name":"eveniet",
+      "position":1,
+      "thumbnail_uid":"2013/02/02/21_05_01_837_hen.jpg",
+      "updated_at":"2013-02-03T03:05:01Z",
+      "image_url":"/system/dragonfly/development/2013/02/02/21_05_01_760_hen.jpg",
+      "thumbnail_url":"/system/dragonfly/development/2013/02/02/21_05_01_837_hen.jpg"
+   }
+	]
+
+	curl http://localhost:3000/HYDSw4-CoDyngzYN-Po5QA/1/menu_categories/1
+
   app.com/12309812309812029/apps
   [
   	{
@@ -20,6 +41,29 @@ API
   app.com/12309812309812029/gadgets/1
   app.com/12309812309812029/menu_categories/1
   app.com/12309812309812029/menu_items/1
+
+  app.com/12309812309812029/1/menu_categories
+  [
+  	{
+  		id: 1,
+  		name: "Whatever",
+  		description: "Cool stuff here.",
+  		icon: "This is great. I wonder what we can do with it."
+  	},
+  	....
+  ]
+
+  app.com/12309812309812029/1/menu_categories/1
+  [
+  	{
+  		id: 1,
+  		name: "Whatever",
+  		description: "Reall cool. A menu item.",
+  		price: 3.56,
+  		image: http://wwww.image.something/url.jpg
+  	}, 
+  	....
+  ]
 
 Database Structure
 

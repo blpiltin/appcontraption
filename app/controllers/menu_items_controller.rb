@@ -1,7 +1,7 @@
 class MenuItemsController < ApplicationController
 
-  before_filter :signed_in_user, except: [:index, :show]
-  before_filter :admin_or_owner_user, except: [:index, :new, :create]
+  before_filter :signed_in_user
+  before_filter :admin_or_owner_user, except: [:new, :create]
 
   def show
     @menu_item = MenuItem.find(params[:id])
@@ -57,7 +57,9 @@ class MenuItemsController < ApplicationController
       end
     end
 
-    def admin_user
-      redirect_to root_path unless current_user.admin?
+    def api_user
+      @app = App.find(params[:app_id])
+      head :unauthorized unless @app.access_token == params[:api_key]
     end
+
 end

@@ -13,10 +13,10 @@
 	    <%= f.text_area :description, rows: 10 %>
 
 		  <div class="icon">
-		  	<%= f.label :icon, 'Icon (128x128 pixel .png recommended)' %>
-				<%= image_tag @menu_category.icon.thumb('145x').url if @menu_category.icon_uid %>
-		  	<%= f.file_field :icon %>
-				<%= f.hidden_field :retained_icon %>
+		  	<%= f.label :image %>
+				<%= image_tag @menu_category.image.thumb('145x').url if @menu_category.image_uid %>
+		  	<%= f.file_field :image %>
+				<%= f.hidden_field :retained_image %>
 			</div>
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>

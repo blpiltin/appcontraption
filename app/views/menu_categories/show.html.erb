@@ -10,7 +10,7 @@
           <%= @menu_category.description %>
         </div>
       <% end %>
-      <%= render 'icon', menu_category: @menu_category %>
+      <%= render 'image', menu_category: @menu_category %>
     </section>
     <div class="count"><%= pluralize(@menu_items.count, "menu item") %></div>
     <span><%= link_to "Edit Menu Category Info", edit_menu_category_path %></span>

@@ -25,6 +25,7 @@ class GadgetsController < ApplicationController
     when 'menu' 
       @menu_categories = @gadget.menu_categories
     when 'events'
+      not_found
     when 'photos'
     when 'contact'
     when 'homepage'

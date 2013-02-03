@@ -1,0 +1,11 @@
+<% provide(:title, 'Menu Categories') %>
+
+<h1>Menu Categories</h1>
+
+<% if !@menu_categories.blank? %>
+	<%= will_paginate @menu_categories %>
+	<ul class="menu-categories">
+  	<%= render @menu_categories %>
+	</ul>
+	<%= will_paginate @menu_categories %>
+<% end %>

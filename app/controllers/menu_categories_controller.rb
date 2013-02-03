@@ -1,16 +1,28 @@
 class MenuCategoriesController < ApplicationController
 
-  before_filter :signed_in_user, except: [:index, :show]
-  before_filter :admin_or_owner_user, except: [:index, :new, :create]
-  before_filter :admin_user, only: :delete
+  before_filter :signed_in_user, except: [:index_json, :show_json]
+  before_filter :admin_or_owner_user, except: [:index_json, :show_json, :new, :create]
+  before_filter :api_user, only: [:index_json, :show_json]
+
+  def index_json
+    @menu_categories = 
+      MenuCategory.find_all_by_app_id(params[:app_id])
+    respond_to do |format|
+      format.json { render json: @menu_categories }
+    end
+  end
+
+  def show_json
+    @menu_items = 
+      MenuItem.where(menu_category_id:params[:id])
+    respond_to do |format|
+      format.json { render json: @menu_items }
+    end
+  end
 
   def show
     @menu_category = MenuCategory.find(params[:id])
     @menu_items = @menu_category.menu_items
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @menu_category }
-    end
   end
 
   def new
@@ -66,7 +78,9 @@ class MenuCategoriesController < ApplicationController
       end
     end
 
-    def admin_user
-      redirect_to root_path unless current_user.admin?
+    def api_user
+      @app = App.find(params[:app_id])
+      head :unauthorized unless @app.access_token == params[:access_token]
     end
+
 end
