@@ -2,7 +2,7 @@ class GadgetsController < ApplicationController
 
   before_filter :signed_in_user, except: [:index]
   before_filter :admin_or_owner_user, 
-    except: [:index, :show, :new, :create]
+    except: [:index, :show, :new, :create, :sort]
   before_filter :admin_user, only: :delete
 
   # GET /gadgets
@@ -15,6 +15,15 @@ class GadgetsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @gadgets }
     end
+  end
+
+  def sort
+    @gadgets = Gadget.find_all_by_app_id(params[:id])
+    @gadgets.each do |gadget|
+      gadget.position = params['gadget'].index(gadget.id.to_s) + 1
+      gadget.save
+    end
+    render nothing: true
   end
 
   # GET /gadgets/1

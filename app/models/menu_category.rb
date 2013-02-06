@@ -33,11 +33,6 @@ class MenuCategory < ActiveRecord::Base
     thumbnail.remote_url unless thumbnail.blank?
   end
 
-  def self.find_all_by_gadget_id(gadget_id)
-    @gadget = Gadget.find(gadget_id)
-    @gadget.menu_categories
-  end
-
   def self.find_all_by_app_id(app_id)
     @gadgets = Gadget.where(
       app_id:app_id, 

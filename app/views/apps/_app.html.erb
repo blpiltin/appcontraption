@@ -1,9 +1,16 @@
 <li class="app">
-  <%= render 'apps/icon', app: app %>
-  <%= link_to app.name, app_path(app) %>
-  <% if current_user.admin? %>
-  <div style="float:right"><%= link_to image_tag('delete_small.png'), app, method: :delete,
-                                  data: { confirm: "Are you absolutely sure?" } %></div>
-  <% end %>
+    <div class="row" style="height:80px">
+        <div class="span2">
+            <%= render 'apps/icon', app: app %>
+        </div>
+        <div class="span6">
+            <%= link_to app.name, app_path(app) %>
+					  <% if current_user.admin? %>
+					  <div style="float:right"><%= link_to image_tag('delete_small.png'), app, method: :delete, data: { confirm: "Are you absolutely sure?" } %></div>
+					  <% end %><br />
+            <% if !app.description.blank? %>
+                <%= app.description %><br />
+            <% end %>
+        </div>
+    </div>
 </li>
-

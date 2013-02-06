@@ -3,7 +3,7 @@
   <aside class="span4">
     <section>
       <h1>
-        App : <%= @app.name %><br />
+        <%= @app.name %><br />
       </h1>
       <%= render 'icon', app: @app %>
     </section>
@@ -22,9 +22,7 @@
 	<div class="span8">
     <h3>Gadgets</h3>
     <% if @gadgets.any? %>
-      <ul class="gadgets">
-        <%= render @gadgets %>
-      </ul>
+      <%= render '/gadgets/sortable_gadgets', gadgets: @gadgets %>
     <% end %>
     <div class="add-link">
       <%= link_to "Add Gadget", :action => "add_gadget" %>
