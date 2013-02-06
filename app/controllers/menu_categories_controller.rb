@@ -1,8 +1,11 @@
 class MenuCategoriesController < ApplicationController
 
-  before_filter :signed_in_user, except: [:index_json, :show_json]
-  before_filter :admin_or_owner_user, except: [:index_json, :show_json, :new, :create]
-  before_filter :api_user, only: [:index_json, :show_json]
+  before_filter :signed_in_user, 
+    except: [:index_json, :show_json]
+  before_filter :admin_or_owner_user, 
+    except: [:index_json, :show_json, :new, :create, :index, :sort]
+  before_filter :api_user, 
+    only: [:index_json, :show_json]
 
   def index_json
     @menu_categories = 
@@ -18,6 +21,22 @@ class MenuCategoriesController < ApplicationController
     respond_to do |format|
       format.json { render json: @menu_items }
     end
+  end
+
+  # def index
+  #   # @menu_categories = MenuCategory.find_all_by_gadget_id(params[:id])
+  #   @menu_categories.order('menu_categories.position ASC')
+  # end
+
+  def sort
+    @menu_categories = 
+      MenuCategory.find_all_by_gadget_id(params[:id])
+    @menu_categories.each do |menu_category|
+      menu_category.position = 
+        params['menu_category'].index(menu_category.id.to_s) + 1
+      menu_category.save
+    end
+    render nothing: true
   end
 
   def show
@@ -74,6 +93,14 @@ class MenuCategoriesController < ApplicationController
       if !current_user.admin?
         @menu_category = MenuCategory.find_by_id(params[:id])
         @user = @menu_category.gadget.app.user
+        redirect_to root_path if @user != current_user
+      end
+    end
+
+    def admin_or_gadget_owner_user
+      if !current_user.admin?
+        @gadget = Gadget.find_by_id(params[:id])
+        @user = @gadget.app.user
         redirect_to root_path if @user != current_user
       end
     end

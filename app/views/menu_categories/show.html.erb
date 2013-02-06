@@ -5,11 +5,11 @@
       <h1>
         Menu Category : <%= @menu_category.name %><br />
       </h1>
-      <% if !@menu_category.description.blank? %>
+<!--       <% if !@menu_category.description.blank? %>
         <div class="menu-category-description">
           <%= @menu_category.description %>
         </div>
-      <% end %>
+      <% end %> -->
       <%= render 'image', menu_category: @menu_category %>
     </section>
     <div class="count"><%= pluralize(@menu_items.count, "menu item") %></div>
@@ -19,9 +19,11 @@
   <div class="span8">
     <h3>Menu Items</h3>
     <% if @menu_items.any? %>
-      <ul class="menu-items">
+      <%= render '/menu_items/sortable_menu_items', menu_items: @menu_items %>
+
+<!--       <ul class="menu-items">
         <%= render @menu_items %>
-      </ul>
+      </ul> -->
     <% end %>
     <div class="add-link">
       <%= link_to "Add Menu Item", :action => "add_menu_item" %>

@@ -1,6 +1,5 @@
 <li class="gadget">
 	<%= render 'gadgets/icon', gadget: gadget %>
   <%= link_to gadget.name, gadget_path(gadget) %>
-  | <%= link_to "Delete", gadget, method: :delete,
-                                  data: { confirm: "You absolutely sure?" } %>
-</li>
+  <div style="float:right"><%= link_to image_tag('delete_small.png'), gadget, method: :delete,
+                                  data: { confirm: "You absolutely sure?" } %></div>

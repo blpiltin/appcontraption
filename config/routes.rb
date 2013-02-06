@@ -1,28 +1,39 @@
 Appcontraption::Application.routes.draw do
+
   resources :sessions, only: [:new, :create, :destroy]
+
   resources :users do
     member do
       get :apps, :add_app
     end
   end
+
   resources :apps do
     member do
       get :gadgets, :add_gadget
     end
   end
+
   resources :gadgets do
     member do
       get :menu_categories, :add_menu_category
     end
   end
+
   resources :menu_categories do
     member do
       get :menu_items, :add_menu_item
     end
+    post :sort, on: :collection
   end
-  resources :menu_items
+  
+  resources :menu_items do
+    post :sort, on: :collection
+  end
+  
   resources :messages, only: [:new, :create]
 
+  match '/:controller/sort/:id', to: ':controller#sort', via: :post
   match '/:access_token/:app_id/:controller', to: ':controller#index_json', via: :get
   match '/:access_token/:app_id/:controller/:id', to: ':controller#show_json', via: :get
 

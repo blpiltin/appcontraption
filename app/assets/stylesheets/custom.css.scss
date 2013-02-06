@@ -67,6 +67,9 @@ p {
   line-height: 1.7em;
 }
 
+a {
+  font-weight:bold;
+}
 
 /* header */
 
@@ -328,6 +331,10 @@ aside {
   }
 }
 
+.menu-category img {
+  margin-right: 10px;
+}
+
 .menu-category-description {
 }
 
@@ -346,6 +353,9 @@ aside {
   }
 }
 
-.menu-item img {
-  margin-right: 10px;
+.menu-item {
+  img {
+    margin-right: 10px;
+  }
 }
+

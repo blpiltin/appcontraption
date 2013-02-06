@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 
-  before_filter :signed_in_user
-  before_filter :admin_user, except: [:edit, :update, :show]
-  before_filter :correct_user, only: [:edit, :update]
+  before_filter :signed_in_user, except: [:new, :create]
+  before_filter :admin_or_owner_user, except: [:new, :create]
 
   def show
     @user = User.find(params[:id])
@@ -26,8 +25,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
+      redirect_to @user
     else
       render 'edit'
     end
@@ -49,24 +50,22 @@ class UsersController < ApplicationController
 
   private
 
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user) or current_user.admin?
-    end
-
-    def admin_user
-      redirect_to(root_path) unless current_user.admin?
+    def admin_or_owner_user
+      if !current_user.admin?
+        @user = User.find_by_id(params[:id])
+        redirect_to root_path if @user != current_user
+      end
     end
 
     def save_user
       @user = User.new(params[:user])
       if @user.save
-        if current_user.admin?
+        if current_user and current_user.admin?
           redirect_to @user
         else
           sign_in @user
           flash[:success] = "Welcome to the App Contraption!"
-          redirect_to @user
+          redirect_back_or(root_path)
         end
       else
         render 'new'

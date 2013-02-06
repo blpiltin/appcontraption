@@ -1,8 +1,11 @@
 <h3>Menu Categories</h3>
 <% if @menu_categories.any? %>
-  <ul class="menu-categories">
+
+	<%= render '/menu_categories/sortable_menu_categories', menu_categories: @menu_categories %>
+
+<!--   <ul class="menu-categories">
     <%= render @menu_categories %>
-  </ul>
+  </ul> -->
 <% end %>
 <div class="add-link">
   <%= link_to "Add Menu Category", :action => "add_menu_category" %>

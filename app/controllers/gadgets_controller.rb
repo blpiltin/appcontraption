@@ -53,7 +53,7 @@ class GadgetsController < ApplicationController
   # POST /gadgets
   # POST /gadgets.json
   def create
-    @gadget = Gadget.new
+    @gadget = Gadget.new(params[:gadget], without_protection: true)
     @gadget.app_id = params[:gadget][:app_id]
     @gadget.gadget_type_id = params[:gadget][:gadget_type_id]
     @gadget.position = 

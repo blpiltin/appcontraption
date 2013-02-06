@@ -1,4 +1,5 @@
 class MenuCategory < ActiveRecord::Base
+
   image_accessor :image do
     copy_to(:thumbnail) {|a| a.thumb('128x128#') }
   end
@@ -30,6 +31,11 @@ class MenuCategory < ActiveRecord::Base
 
   def thumbnail_url
     thumbnail.remote_url unless thumbnail.blank?
+  end
+
+  def self.find_all_by_gadget_id(gadget_id)
+    @gadget = Gadget.find(gadget_id)
+    @gadget.menu_categories
   end
 
   def self.find_all_by_app_id(app_id)

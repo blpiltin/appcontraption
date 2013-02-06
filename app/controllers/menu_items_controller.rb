@@ -3,6 +3,15 @@ class MenuItemsController < ApplicationController
   before_filter :signed_in_user
   before_filter :admin_or_owner_user, except: [:new, :create]
 
+  def sort
+    @menu_items = MenuItem.find_all_by_menu_category_id(params[:id])
+    @menu_items.each do |menu_item|
+      menu_item.position = params['menu_item'].index(menu_item.id.to_s) + 1
+      menu_item.save
+    end
+    render nothing: true
+  end
+
   def show
     @menu_item = MenuItem.find(params[:id])
     respond_to do |format|
