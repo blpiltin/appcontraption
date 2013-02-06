@@ -11,90 +11,15 @@
 			"file": "app/controllers/menu_items_controller.rb",
 			"settings":
 			{
-				"buffer_size": 1981,
+				"buffer_size": 1965,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/routes.rb",
+			"file": "app/models/menu_category.rb",
 			"settings":
 			{
-				"buffer_size": 2834,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<% content_for :head do %>\n<%= javascript_tag do %>\n// Sorting the list\n\n$(document).ready(function(){\n    $('#menu_categories').sortable({\n        axis: 'y',\n        dropOnEmpty: false,\n        handle: '.handle',\n        cursor: 'crosshair',\n        items: 'li',\n        opacity: 0.4,\n        scroll: true,\n        update: function(){\n            $.ajax({\n            type: 'post',\n            data: $('#menu_categories').sortable('serialize'),\n            dataType: 'script',\n            complete: function(request){\n                $('#menu_categories').effect('highlight');\n            },\n            url: '/menu_categories/sort'})\n        }\n    });\n});\n<% end %>\n<% end %>\n\n<ul class=\"menu-categories\" id=\"menu_categories\"> <% menu_categories.each do |menu_category| %>\n  <li class=\"menu-category\" id=\"menu_category_<%= menu_category.id %>\">\n    <span class=\"handle\"><%= image_tag 'up_and_down_small.png' %></span> \n    <%= render 'menu_categories/image', menu_category: menu_category %>\n    <%= link_to menu_category.name, menu_category_path(menu_category) %>\n    <div style=\"float:right\"><%= link_to image_tag('delete_small.png'), menu_category, method: :delete, data: { confirm: \"Are you sure you want to delete this?\" } %>\n    </div>\n    </li>\n<% end %></ul>",
-			"file": "app/views/menu_categories/_sortable_menu_categories.html.erb",
-			"file_size": 1262,
-			"file_write_time": 1360045894000000,
-			"settings":
-			{
-				"buffer_size": 1267,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/menu_categories_controller.rb",
-			"settings":
-			{
-				"buffer_size": 2709,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "NOTES.txt",
-			"settings":
-			{
-				"buffer_size": 4008,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/menu_items/_sortable_menu_items.html.erb",
-			"settings":
-			{
-				"buffer_size": 1661,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/custom.css.scss",
-			"settings":
-			{
-				"buffer_size": 4950,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/users_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1405,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/apps_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1839,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/helpers/sessions_helper.rb",
-			"settings":
-			{
-				"buffer_size": 816,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/user.rb",
-			"settings":
-			{
-				"buffer_size": 1742,
+				"buffer_size": 1408,
 				"line_ending": "Unix"
 			}
 		}
@@ -176,48 +101,55 @@
 	"file_history":
 	[
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_image.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/_icon.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_icon.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_image.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/config/routes.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_sortable_menu_categories.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/_app.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/NOTES.txt",
+		"/home/blpiltin/Projects/Code/app_contraption/Gemfile",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/menu_category.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/gadgets_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_sortable_menu_items.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/menu_categories_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/microposts/_micropost.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_home_guest.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_gadget.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/assets/stylesheets/custom.css.scss",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/users_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/apps_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/helpers/sessions_helper.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/models/user.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/show.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_menu_item.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/gadgets_controller.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/seeds.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_form.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/config/routes.rb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/models/menu_category.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/layouts/_header.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_menu.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/assets/javascripts/static_pages.js.coffee",
 		"/home/blpiltin/Projects/Code/app_contraption/app/assets/javascripts/messages.js.coffee",
 		"/home/blpiltin/Projects/Code/app_contraption/app/assets/javascripts/gadgets.js.coffee",
-		"/home/blpiltin/Projects/Code/app_contraption/Gemfile",
 		"/home/blpiltin/Projects/Code/app_contraption/app/assets/javascripts/application.js",
-		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_sortable_menu_items.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/show.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/assets/stylesheets/custom.css.scss",
 		"/home/blpiltin/Projects/Code/app_contraption/app/assets/stylesheets/application.css",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_menu_category.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/application_controller.rb",
-		"/home/blpiltin/Projects/Code/app_contraption/NOTES.txt",
-		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/menu_categories_controller.rb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/show.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/menu_items_controller.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/models/menu_item.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/schema.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130203024835_drop_image_url_columns.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/models/app.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/models/gadget.rb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/_icon.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/apps_controller.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/config/environments/development.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130203015003_fix_image_and_thumbnail_columns.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202061752_add_thumbnail_name_and_thumbnail_uid_to_menu_item.rb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_image.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202061053_drop_icon_from_menu_category.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202061213_remove_icon_name_and_icon_uid_from_menu_category.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202061002_drop_icon_from_menu_category.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202050311_add_access_token_to_user.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/index.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/users_controller.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_home_authenticated.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_form.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_icon.html.erb",
@@ -240,17 +172,14 @@
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/edit.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/new.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/helpers/gadgets_helper.rb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_gadget.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130130064252_create_app_tables.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/new.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/new.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/static_pages/home.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/index.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_home_admin.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_icon.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/config/initializers/dragonfly.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/edit.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/_app.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/config/initializers/secret_token.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130130064044_drop_apps_tables.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/spec/requests/authentication_pages_spec.rb",
@@ -296,13 +225,9 @@
 		"/home/blpiltin/Projects/Code/app_contraption/app/models/micropost.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/db/development.sqlite3",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/lookups/index.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/helpers/sessions_helper.rb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_micropost_content.html.erb",
 		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_gadget_content.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/app/views/lookups/show.html.erb",
-		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126031023_drop_table_gadgets.rb",
-		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126032112_add_index_to_lookups.rb",
-		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126014417_add_gadgets_to_users.rb"
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/lookups/show.html.erb"
 	],
 	"find":
 	{
@@ -396,6 +321,7 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -403,77 +329,21 @@
 					"file": "app/controllers/menu_items_controller.rb",
 					"settings":
 					{
-						"buffer_size": 1981,
+						"buffer_size": 1965,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1976,
-								1976
+								715,
+								715
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "config/routes.rb",
-					"settings":
-					{
-						"buffer_size": 2834,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								404,
-								404
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/menu_categories/_sortable_menu_categories.html.erb",
-					"settings":
-					{
-						"buffer_size": 1267,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								237,
-								237
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -485,23 +355,22 @@
 			]
 		},
 		{
-			"selected": 2,
 			"sheets":
 			[
 				{
-					"buffer": 3,
-					"file": "app/controllers/menu_categories_controller.rb",
+					"buffer": 1,
+					"file": "app/models/menu_category.rb",
 					"settings":
 					{
-						"buffer_size": 2709,
+						"buffer_size": 1408,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								670,
-								670
+								40,
+								40
 							]
 						],
 						"settings":
@@ -512,200 +381,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "NOTES.txt",
-					"settings":
-					{
-						"buffer_size": 4008,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								344,
-								344
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/menu_items/_sortable_menu_items.html.erb",
-					"settings":
-					{
-						"buffer_size": 1661,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								877,
-								896
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/assets/stylesheets/custom.css.scss",
-					"settings":
-					{
-						"buffer_size": 4950,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4910,
-								4910
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6080.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/controllers/users_controller.rb",
-					"settings":
-					{
-						"buffer_size": 1405,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								422,
-								422
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/controllers/apps_controller.rb",
-					"settings":
-					{
-						"buffer_size": 1839,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								234,
-								234
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/helpers/sessions_helper.rb",
-					"settings":
-					{
-						"buffer_size": 816,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "app/models/user.rb",
-					"settings":
-					{
-						"buffer_size": 1742,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1102,
-								1102
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

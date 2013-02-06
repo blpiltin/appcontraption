@@ -1,5 +1,5 @@
-	<span style="height:100px"><% if !app.icon.blank? %>
+	<% if !app.icon.blank? %>
 		<%= link_to image_tag(app.icon.thumb('100x100#').url), app_path(app) %>
   <% else %>
- 		<%= link_to image_tag('apps/'+app.app_type.name+'.png'), app_path(app) %>
- 	<% end %></span>
+ 		<%= link_to image_tag('apps/'+app.app_type.name+'.png', size:"100x100"), app_path(app) %>
+ 	<% end %>
