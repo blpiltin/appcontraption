@@ -30,12 +30,12 @@ class MenuCategory < ActiveRecord::Base
   end
 
   def image_url
-    prefix = $request.protocol + $request.host_with_port
+    prefix = Rails.env.production? ? '' : $request.protocol + $request.host_with_port
     prefix+image.remote_url unless image.blank?
   end
 
   def thumbnail_url
-    prefix = $request.protocol + $request.host_with_port
+    prefix = Rails.env.production? ? '' : $request.protocol + $request.host_with_port
     prefix+thumbnail.remote_url unless thumbnail.blank?
   end
 
