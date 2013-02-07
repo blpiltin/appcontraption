@@ -8,6 +8,7 @@ class MenuCategoriesController < ApplicationController
     only: [:index_json, :show_json]
 
   def index_json
+    $request = request
     @menu_categories = 
       MenuCategory.find_all_by_app_id(params[:app_id])
     respond_to do |format|
@@ -16,6 +17,7 @@ class MenuCategoriesController < ApplicationController
   end
 
   def show_json
+    $request = request
     @menu_items = 
       MenuItem.where(menu_category_id:params[:id])
     respond_to do |format|

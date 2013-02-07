@@ -28,11 +28,13 @@ class MenuItem < ActiveRecord::Base
   end
 
   def image_url
-    image.remote_url unless image.blank?
+    prefix = $request.protocol + $request.host_with_port
+    prefix+image.remote_url unless image.blank?
   end
 
   def thumbnail_url
-    thumbnail.remote_url unless thumbnail.blank?
+    prefix = $request.protocol + $request.host_with_port
+    prefix+thumbnail.remote_url unless thumbnail.blank?
   end
 
 	private

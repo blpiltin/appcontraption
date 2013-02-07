@@ -12,19 +12,25 @@
 	    <%= f.label :description %>
 	    <%= f.text_area :description, rows: 10 %>
 
-		  <div class="icon">
-		  	<%= f.label :image %>
-				<%= image_tag @menu_category.image.thumb('145x').url if @menu_category.image_uid %>
-		  	<%= f.file_field :image %>
-				<%= f.hidden_field :retained_image %>
+	    <%= f.label :image %>
+	    <div class="row">
+		  	<div class="span2">
+					<%= image_tag @menu_category.image.thumb('145x').url if @menu_category.image_uid %></div>
+				<div class="span4">
+					<%= f.file_field :image %><br />
+					Remove on save <%= f.check_box :remove_image %>
+					<%= f.hidden_field :retained_image %>
+				</div>
 			</div>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-      <% if f.object.new_record? %>
-      	<%= link_to "Cancel", @menu_category.gadget %>
-      <% else %>
-      	<%= link_to "Cancel", @menu_category %>
-      <% end %>
+			<div class="submit-bar">
+	      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+	      <% if f.object.new_record? %>
+	      	<%= link_to "Cancel", @menu_category.gadget %>
+	      <% else %>
+	      	<%= link_to "Cancel", @menu_category %>
+	      <% end %>
+    	</div>
     <% end %>
   </div>
 </div>
