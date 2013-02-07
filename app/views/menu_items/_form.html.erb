@@ -15,16 +15,22 @@
 	    <%= f.label :price, 'Price (do not include $)'%>
 	    <%= f.text_field :price %>
 
-		  <div class="icon">
-		  	<%= f.label :image %>
-				<%= image_tag @menu_item.image.thumb('145x').url if @menu_item.image_uid %>
-		  	<%= f.file_field :image %>
-				<%= f.hidden_field :retained_image %>
+		  <%= f.label :image %>
+		 	<div class="row">
+		  	<div class="span2">
+					<%= image_tag @menu_item.image.thumb('145x').url if @menu_item.image_uid %></div>
+				<div class="span4">
+					<%= f.file_field :image %>
+					<% if @menu_item.image_uid %>
+						<br />Remove on save <%= f.check_box :remove_image %>
+					<% end %>
+					<%= f.hidden_field :retained_image %>
+				</div>
 		  </div>
-
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-			<%= link_to "Cancel", @menu_item.menu_category %>
-			
+		  <div class="submit-bar">
+     	 	<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+				<%= link_to "Cancel", @menu_item.menu_category %>
+			</div>
     <% end %>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<h3>Menu Categories</h3>
+<h3 style="display:inline">Menu Categories </h3>(drag <%= image_tag 'up_and_down_small.png', size:'10x10' %> to change order)
 <% if @menu_categories.any? %>
 
 	<%= render '/menu_categories/sortable_menu_categories', menu_categories: @menu_categories %>

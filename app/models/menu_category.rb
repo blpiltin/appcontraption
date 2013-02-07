@@ -21,6 +21,10 @@ class MenuCategory < ActiveRecord::Base
 
  	before_save :default_values
 
+  def parent
+    gadget
+  end
+  
   def as_json(options={})
     super(options.merge(methods: [:image_url, :thumbnail_url]))
   end

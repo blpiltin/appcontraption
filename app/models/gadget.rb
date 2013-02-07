@@ -19,6 +19,10 @@ class Gadget < ActiveRecord::Base
 
   before_save :default_values
 
+  def parent
+    app
+  end
+
   def as_json(options={})
     super(options.merge(methods: [:icon_url]))
   end

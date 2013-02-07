@@ -17,7 +17,7 @@
 <span class="back-link"> | <%= link_to "Back", @menu_category.gadget %></span>
   </aside>
   <div class="span8">
-    <h3>Menu Items</h3>
+  <h3 style="display:inline">Menu Items </h3>(drag <%= image_tag 'up_and_down_small.png', size:'10x10' %> to change order)
     <% if @menu_items.any? %>
       <%= render '/menu_items/sortable_menu_items', menu_items: @menu_items %>
 

@@ -15,15 +15,22 @@
 	    <%= f.label :address %>
 	    <%= f.text_area :address, rows: 4 %>
 
-	    <div class="icon">
-			  <%= f.label :icon, 'Icon (128x128 pixel .png recommended)' %>
-		  	<% if @app.icon.nil? and !f.object.new_record? %>
+		  <%= f.label :icon, 'Icon (128x128 pixel .png recommended)' %>
+	    <div class="row">
+		  	<div class="span2">
+					<% if @app.icon.nil? and !f.object.new_record? %>
 						<%= image_tag 'apps/'+@app.type+'.png' %>
 					<% else %>
-					<%= image_tag @app.icon.thumb('145x').url if @app.icon_uid %>
-		  	<% end %>
-		  	<%= f.file_field :icon %>
-				<%= f.hidden_field :retained_icon %>
+		  			<%= image_tag @app.icon.thumb('145x').url if @app.icon_uid %>
+		  		<% end %>
+				</div>
+				<div class="span4">
+					<%= f.file_field :icon %>
+					<% if @app.icon_uid %>
+						<br />Remove on save <%= f.check_box :remove_icon %>
+					<% end %>
+					<%= f.hidden_field :retained_icon %>
+				</div>
 			</div>
 
 	    <%= f.label :description %>
@@ -31,13 +38,14 @@
 
 	    <%= f.label :search_words, 'Search Words (seperate with spaces)' %>
 	    <%= f.text_field :search_words %>
-
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-      <% if f.object.new_record? %>
-      	<%= link_to "Cancel", current_user.admin? ? @app.user : root_path %>
-      <% else %>
-      	<%= link_to "Cancel", @app %>
-      <% end %>
+	    <div class="submit-bar">
+	      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+	      <% if f.object.new_record? %>
+	      	<%= link_to "Cancel", current_user.admin? ? @app.user : root_path %>
+	      <% else %>
+	      	<%= link_to "Cancel", @app %>
+	      <% end %>
+    	</div>
     <% end %>
   </div>
 </div>

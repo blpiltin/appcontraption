@@ -1,0 +1,8 @@
+<div class="submit-bar">
+  <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+  <% if f.object.new_record? %>
+  	<%= link_to "Cancel", f.object.parent %>
+  <% else %>
+  	<%= link_to "Cancel", f.object %>
+  <% end %>
+</div>

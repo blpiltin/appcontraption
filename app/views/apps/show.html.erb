@@ -20,7 +20,7 @@
     <% end %>
   </aside>
 	<div class="span8">
-    <h3>Gadgets</h3>
+    <h3 style="display:inline">Gadgets </h3>(drag <%= image_tag 'up_and_down_small.png', size:'10x10' %> to change order)
     <% if @gadgets.any? %>
       <%= render '/gadgets/sortable_gadgets', gadgets: @gadgets %>
     <% end %>

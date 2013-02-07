@@ -17,20 +17,14 @@
 		  	<div class="span2">
 					<%= image_tag @menu_category.image.thumb('145x').url if @menu_category.image_uid %></div>
 				<div class="span4">
-					<%= f.file_field :image %><br />
-					Remove on save <%= f.check_box :remove_image %>
+					<%= f.file_field :image %>
+					<% if @menu_category.image_uid %>
+						<br />Remove on save <%= f.check_box :remove_image %>
+					<% end %>
 					<%= f.hidden_field :retained_image %>
 				</div>
 			</div>
-
-			<div class="submit-bar">
-	      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-	      <% if f.object.new_record? %>
-	      	<%= link_to "Cancel", @menu_category.gadget %>
-	      <% else %>
-	      	<%= link_to "Cancel", @menu_category %>
-	      <% end %>
-    	</div>
+			<%= render 'shared/submit_bar', f: f %>
     <% end %>
   </div>
 </div>

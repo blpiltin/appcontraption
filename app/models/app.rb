@@ -23,6 +23,10 @@ class App < ActiveRecord::Base
   validates :user_id, presence: true
   validates :app_type_id, presence: true
 
+  def parent
+    user
+  end
+
   def as_json(options={})
     super(options.merge(methods: [:icon_url, :splash_url]))
   end
