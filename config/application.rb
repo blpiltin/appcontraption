@@ -94,5 +94,8 @@ module Appcontraption
     # Raise mail delivery errors
     config.action_mailer.raise_delivery_errors = true
 
+    # For using Dragonfly on heroku with S3DataStore
+    config.middleware.insert 1, 'Dragonfly::Middleware', :images
+    
   end
 end

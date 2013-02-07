@@ -9,6 +9,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 # gem "paperclip", "~> 3.0"
 # gem 'carrierwave'
 gem 'rack-cache', :require => 'rack/cache'
+gem 'fog'
 gem 'dragonfly', '~>0.9.12'
 # gem "acts_as_list"
 
