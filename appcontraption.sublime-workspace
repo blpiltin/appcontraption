@@ -1,0 +1,380 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 54.0,
+		"selected_items":
+		[
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript (Rails)"
+			],
+			[
+				"html",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"ht",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"beau",
+				"BeautifyRuby"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"prett",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"Package Control:c",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/menu_category.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/users/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/sessions/new.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_home_guest.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/static_pages/about.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/helpers/application_helper.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/static_pages_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_home_authenticated.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/config/initializers/dragonfly.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_menu.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/layouts/_footer.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/layouts/_header.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/gadgets_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/NOTES.txt",
+		"/home/blpiltin/Projects/Code/app_contraption/config/routes.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/static_pages/home.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/index.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/menu_item.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/Gemfile",
+		"/home/blpiltin/Projects/Code/app_contraption/config/application.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_sortable_gadgets.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_form.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/_form.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_form.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_form.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_submit_bar.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/menu_categories_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/gadget.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/user.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/app.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/_icon.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/config/environments/development.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/assets/stylesheets/custom.css.scss",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/_app.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/menu_items_controller.rb",
+		"/home/blpiltin/temp.py",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_image.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_icon.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_image.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_sortable_menu_categories.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_sortable_menu_items.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/microposts/_micropost.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_gadget.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/users_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/apps_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/helpers/sessions_helper.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_menu_item.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/seeds.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/assets/javascripts/static_pages.js.coffee",
+		"/home/blpiltin/Projects/Code/app_contraption/app/assets/javascripts/messages.js.coffee",
+		"/home/blpiltin/Projects/Code/app_contraption/app/assets/javascripts/gadgets.js.coffee",
+		"/home/blpiltin/Projects/Code/app_contraption/app/assets/javascripts/application.js",
+		"/home/blpiltin/Projects/Code/app_contraption/app/assets/stylesheets/application.css",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_menu_category.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/application_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/schema.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130203024835_drop_image_url_columns.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130203015003_fix_image_and_thumbnail_columns.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202061752_add_thumbnail_name_and_thumbnail_uid_to_menu_item.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202061053_drop_icon_from_menu_category.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202061213_remove_icon_name_and_icon_uid_from_menu_category.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202061002_drop_icon_from_menu_category.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130202050311_add_access_token_to_user.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/_icon.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/assets/stylesheets/scaffolds.css.scss",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/new.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/edit.html.erb",
+		"/media/blpiltin/BLPILTIN/Work/Classes/Engineering Design & Problem Solving/Spring 2013/Projects/Emerging Tech/Groups.txt",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/edit.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/tests/show.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/users/edit.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/index.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_items/_icon.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/lib/tasks/sample_data.rake",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130131165623_create_menu_items.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130131073029_create_menu_categories.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/edit.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/menu_categories/new.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/helpers/gadgets_helper.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130130064252_create_app_tables.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/new.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/new.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/index.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_home_admin.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/apps/edit.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/config/initializers/secret_token.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130130064044_drop_apps_tables.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/requests/authentication_pages_spec.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/requests/contact_pages_spec.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/requests/gadget_pages_spec.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/shared/_user_info.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130130064508_create_gadget_tables.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/app_type.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126070427_create_gadget_types.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126070606_create_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130130051049_add_app_index_to_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130130052051_create_app_types.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130130063758_drop_gadget_tables.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/gadget_type.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130130051842_create_apps.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/factories.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/users/new.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/users/index.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/spec/support/utilities.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/users/edit_profile.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/sessions_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadgets/_temp.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/users/_user.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/users/add_gadget.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/gadget_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadget/_gadget.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/views/gadget/index.html.erb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/controllers/lookups_controller.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130102021657_add_password_digest_to_users.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130102011828_add_index_to_users_email.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130101194618_create_users.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126064126_create_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126063425_drop_table_lookups.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126041238_create_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126063841_drop_table_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126064107_create_table_gadgets.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/db/migrate/20130126030407_create_lookups.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/lookup.rb",
+		"/home/blpiltin/Projects/Code/app_contraption/app/models/message.rb"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"menu_category",
+			"menu-categories",
+			"menu_categories",
+			"category",
+			"categories",
+			"menu_categories",
+			"a",
+			"Base",
+			"/>\n",
+			"menu_category",
+			"menu_categories",
+			"menu_category",
+			"Menu category",
+			"gadget_id",
+			"MenuCategory",
+			"menu_category",
+			"gadget",
+			"Gadget",
+			"gadget",
+			"1",
+			"@app",
+			"Sign in",
+			"gadget",
+			";\n",
+			"mailer",
+			"SampleApp",
+			"sample_app",
+			"micropost",
+			"delete",
+			"plural",
+			"post",
+			"have_selector('title', text: ",
+			"have_selector('h1',    text: ",
+			"have_selector('h1',    text:",
+			"have_selector('title', text:",
+			">",
+			"Ruby on Rails Tutorial Sample App",
+			"\"Ruby on Rails Tutorial Sample App\"",
+			"Ruby on Rails Tutorial Sample App",
+			"gedit.desktop"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"gadget",
+			"gadgets",
+			"item",
+			"items",
+			"menu_items",
+			"menu_item",
+			"Menu item",
+			"menu_category_id",
+			"MenuItem",
+			"menu_item",
+			"menu_category",
+			"MenuCategory",
+			"menu_category",
+			"app",
+			"AppContraption",
+			"appcontraption",
+			"object",
+			"have_title(",
+			"have_heading(",
+			"have_heading",
+			"have_title",
+			"#{base_title}",
+			"sublime.desktop"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 242.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 296.0,
+	"status_bar_visible": true
+}
